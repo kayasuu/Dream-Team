@@ -92,30 +92,6 @@ mongoClient.connect() // Connect to Mongo DB using Mongo Client we created in St
   })
 })
 
-app.get('/api/user', (_, res) => {
-    usersCollection.find().toArray().then((user) => {
-      res.json(user)
-    })
-  });
-
-// POST a Users
-app.post('/api/user', (request, response) => {
-    // BCRYPT - pw encryption - admin, user1
-    const bcrypt = require('bcrypt');
-    // console.log(request.body)
-
-    const hashedPassword = bcrypt.hashSync(request.body.password, bcrypt.genSaltSync())
-    console.log(hashedPassword)
-    usersCollection.insertOne({ 
-        name: `${req.body.name}`, 
-        email: `${req.body.email}`, 
-        password: hashedPassword
-    }).then((_) => { // _ is used as we're not doing anything with the parameter
-        response.json();
-    })
-})
-  
-
 app.listen(port, () => {
   console.log(`listening on port ${port}`)
 })
