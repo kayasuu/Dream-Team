@@ -4,9 +4,9 @@ function renderBucketList() {
   paragraph.textContent = "Loading..."; // Aiming to update this later to something more creative
   page.replaceChildren(paragraph);
 
-  axios.get("/api/bucketlist").then((response) => {
-    const listElements = response.data.map((challenge) =>
-      renderList(bucketlist)
+  axios.get("/api/bucket").then((response) => {
+    const listElements = response.data.map((bucketList) =>
+      renderList(bucketList)
     );
     page.replaceChildren(...listElements);
   });
@@ -25,11 +25,10 @@ function renderList(bucketList) {
   const activity = document.createElement("p");
   activity.textContent = bucketList.activity;
 
-  const image = createElement("img");
+  const image = document.createElement("img");
   image.src = bucketList.image;
 
   div.append(name, description, activity, image);
-  return div;
-
   console.log("bucketlist is working!");
+  return div;
 }
