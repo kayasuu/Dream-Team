@@ -4,7 +4,7 @@ function renderBucketList() {
     paragraph.textContent = "Loading..." // Aiming to update this later to something more creative
     page.replaceChildren(paragraph);
 
-axios.get('/api/bucketlist').then(response => {
+axios.get('/api/bucket').then(response => {
     const listElements = response.data.map(challenge => renderList(bucketlist));
     page.replaceChildren(...listElements)
 })
