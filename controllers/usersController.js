@@ -31,13 +31,13 @@ mongoClient.connect() // Connect to Mongo DB using Mongo Client we created in St
   })
 })
 
-app.get('/', (_, res) => {
+router.get('/', (_, res) => {
   usersCollection.find().toArray().then((user) => {
     res.json(user)
   })
 });
 
-app.post('/', (request, response) => {
+router.post('/', (request, response) => {
   const bcrypt = require('bcrypt');
   const hashedPassword = bcrypt.hashSync(request.body.password, bcrypt.genSaltSync())
   console.log(hashedPassword)
