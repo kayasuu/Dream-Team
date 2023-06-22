@@ -69,7 +69,52 @@ app.patch("/api/bucket/:id", (request, response) => {
     });
 });
 
-console.log("testing my individiaul branch...again")
+mongoClient.connect() // Connect to Mongo DB using Mongo Client we created in Step 2
+.then((response) => { // then(doSomethingOnSuccess)
+  const db = mongoClient.db("bucket-list") // Create a new DB once mongo client has established connection
+  usersCollection = db.collection("users") // Create collection(s) using the DB
+
+  usersCollection.find().toArray()
+  .then(documents => {
+    if (documents.length < 1) {
+      // usersCollection.insertMany([ // insert new document data / records to collection
+      //   { name: "admin" , email: "admin@admin.com", password: "$2b$10$HnCjvUzYdVsyTcXc.UYKae.pp5N6Nc9aTickGVaet4XcPFQbmbNWa" },
+      //   { name: "User1" , email: "user1@user1.com", password: "$2b$10$Rgcl35rXOV03R5yDbY6AfuE0MBbywFuuiCUpaI7M5MTNyng899SLy" },
+      // ])
+    }
+  })
+  .catch(error => { // .catch(tellUsWhatTheErrorIs)
+    console.log("Error has occured")
+    console.log(error)
+  })
+  .finally(() => { // .finally(executeCodeRegardles)
+    console.log("Operation finished - users.js has loaded")
+  })
+})
+
+app.get('/api/user', (_, res) => {
+    usersCollection.find().toArray().then((user) => {
+      res.json(user)
+    })
+  });
+
+// POST a Users
+app.post('/api/user', (request, response) => {
+    // BCRYPT - pw encryption - admin, user1
+    const bcrypt = require('bcrypt');
+    // console.log(request.body)
+
+    const hashedPassword = bcrypt.hashSync(request.body.password, bcrypt.genSaltSync())
+    console.log(hashedPassword)
+    usersCollection.insertOne({ 
+        name: `${req.body.name}`, 
+        email: `${req.body.email}`, 
+        password: hashedPassword
+    }).then((_) => { // _ is used as we're not doing anything with the parameter
+        response.json();
+    })
+})
+  
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`)
