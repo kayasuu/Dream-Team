@@ -7,6 +7,8 @@ app.use(express.static('client'))
 
 const bucketController = require("./controllers/bucketController.js")
 app.use("/api/bucket", bucketController);
+const bucketController = require("./controllers/usersController.js")
+app.use("/api/users", bucketController);
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`)
