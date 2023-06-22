@@ -1,6 +1,7 @@
 function renderHeader()
 
 {setHeaderHtml()};
+console
 
 function setHeaderHtml() {
 
@@ -13,6 +14,7 @@ header.innerHTML =
 <li onClick="renderAbout()">About</li>
 </ul>
 
-`;
+`
+console.log("Header is working!");
 
 }

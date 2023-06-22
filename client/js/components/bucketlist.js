@@ -29,4 +29,6 @@ axios.get('/api/bucketlist').then(response => {
     div.append(name, description, activity,image)
     return div;
 
+    console.log("bucketlist is working!")
+
  }
