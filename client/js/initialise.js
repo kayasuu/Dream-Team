@@ -1,3 +1,3 @@
-renderHeader()
+renderHeader();
 
-console.log("initialise is working!")
+console.log("initialise is working!");
