@@ -7,7 +7,7 @@ const mongoClient = new MongoClient(process.env.MONGO_DB_CONNECTION_STRING);
 
 let bucketCollection;
 
-//initialise DB
+//initialise DB - updated
 mongoClient.connect().then(_ => {
     const db = mongoClient.db("bucket-list");
     db.dropCollection("bucket-list-data");
