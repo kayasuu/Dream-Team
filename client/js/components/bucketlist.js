@@ -50,5 +50,3 @@ function renderList(bucketList) {
   console.log("bucketlist is working!");
 return div;
 }
-
-
