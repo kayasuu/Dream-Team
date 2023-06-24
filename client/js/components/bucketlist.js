@@ -83,3 +83,4 @@ axios.put(`/api/bucket/${bucketList._id}`, data).then((_)=>{
 const page = document.getElementById("page")
 page.replaceChildren(form)
  }
+
