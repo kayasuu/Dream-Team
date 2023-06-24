@@ -18,16 +18,14 @@ mongoClient.connect() // Connect to Mongo DB using Mongo Client we created in St
   .then(documents => {
     if (documents.length < 1) {
       usersCollection.insertMany([ // insert new document data / records to collection
-        { name: "test" , email: "test", password: "$2b$10$H2Hayn53.tPT6UKSl1AVPOa/cKI/Q8NYu0BnsDNymvtJ38rFb/cTe" },
+        { name: "test" , email: "test", password: "$2b$10$H2Hayn53.tPT6UKSl1AVPOa/cKI/Q8NYu0BnsDNymvtJ38rFb/cTe" } // password is test
       ])
     }
-  })
-  .catch(error => { // .catch(tellUsWhatTheErrorIs)
+  }).catch(error => { // .catch(tellUsWhatTheErrorIs)
     console.log("Error has occured")
     console.log(error)
-  })
-  .finally(() => { // .finally(executeCodeRegardles)
-    console.log("Operation finished - users.js has loaded")
+  }).finally(() => { // .finally(executeCodeRegardles)
+    console.log("Operation finished - usersController.js has loaded")
   })
 })
 
@@ -40,14 +38,29 @@ router.get('/', (_, res) => {
 router.post('/', (request, response) => {
   const bcrypt = require('bcrypt');
   const hashedPassword = bcrypt.hashSync(request.body.password, bcrypt.genSaltSync())
-  console.log(hashedPassword)
+
+  if (!request.body.name || !request.body.email || !request.body.password) {
+    response.status(400).json({ message: "missing mandatory fields"});
+    return;
+  }
+
+  if (request.body.password.length < 8) {
+      response.status(400).json({ message: "password must be 8 characters or more"});
+      return;
+  }
+
+  usersCollection.findOne({ email: request.body.email }).then((user) => {
+    if (user) {
+        response.status(400).json({ message: `user with the email ${request.body.email} already exists`});
+        return;
+    } 
   usersCollection.insertOne({ 
-      name: `${req.body.name}`, 
-      email: `${req.body.email}`, 
+      name: `${request.body.name}`, 
+      email: `${request.body.email}`, 
       password: hashedPassword
-  }).then((_) => { // _ is used as we're not doing anything with the parameter
+    }).then((_) => { // _ is used as we're not doing anything with the parameter
       response.json();
+    })
   })
 })
-
 module.exports = router;
