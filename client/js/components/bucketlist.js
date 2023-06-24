@@ -41,14 +41,31 @@ function renderList(bucketList) {
  const editButton = document.createElement('button');
  editButton.textContent = 'Edit';
  editButton.addEventListener('click', () => {
+  
     renderEditForm(bucketList);
+
  })
  editDiv.append(editButton);
 
 
  div.append(name, description, activity, image,deleteButton,editDiv);
   console.log("bucketlist is working!");
+
+  
+
 return div;
 }
 
 
+function renderItinerary(itineraryContent) {
+  // Create a new div and add the class "itineraryDiv"
+  const itineraryDiv = document.createElement("div");
+  itineraryDiv.classList.add("itineraryDiv");
+
+  // Set the div's content to the itinerary passed into this function
+  itineraryDiv.textContent = itineraryContent;
+
+  // Append the itinerary div to the page
+  const page = document.getElementById("page");
+  page.append(itineraryDiv);
+}

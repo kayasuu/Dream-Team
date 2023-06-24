@@ -25,6 +25,8 @@ const usersController = require("./controllers/usersController.js")
 app.use("/api/users", usersController);
 const sessionsController = require("./controllers/sessionsController.js")
 app.use("/api/session", sessionsController);
+const aiController = require("./controllers/aiController.js")
+app.use("/api/gpt", aiController);
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`)

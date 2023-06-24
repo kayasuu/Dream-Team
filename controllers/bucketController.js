@@ -4,13 +4,13 @@ require("dotenv").config();
 
 const { MongoClient, ObjectId } = require("mongodb");
 const mongoClient = new MongoClient(process.env.MONGO_DB_CONNECTION_STRING);
-
+const { gptClassifySentiment } = require('../utilities/gptUtil');
 let bucketCollection;
 
 //initialise DB - updated
 mongoClient.connect().then(_ => {
     const db = mongoClient.db("bucket-list");
-    db.dropCollection("bucket-list-data");
+    // db.dropCollection("bucket-list-data");
     bucketCollection = db.collection("bucket-list-data");
 
     bucketCollection.find().toArray()
@@ -77,5 +77,24 @@ router.patch("/:id", (request, response) => {
         response.json();
     });
 });
+
+
+
+
+//post gpt
+router.post('/', async (request, response) => {
+    const prompt = request.body.prompt;
+    console.log(prompt)
+    try {
+        const result = await gptClassifySentiment(prompt);
+        console.log(result)
+
+        response.json(result);
+        
+    } catch (error) {
+        response.status(500).json({ error: error.toString() });
+    }
+});
+
 
 module.exports = router;
