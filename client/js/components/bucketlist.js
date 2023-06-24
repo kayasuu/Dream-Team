@@ -48,6 +48,7 @@ function renderList(bucketList) {
 
  div.append(name, description, activity, image,deleteButton,editDiv);
   console.log("bucketlist is working!");
+  console.log("our git issues are fixed!");
 return div;
 }
 
