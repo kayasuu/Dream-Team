@@ -11,7 +11,8 @@ function setHeaderHtml() {
 <ul id="navlist" class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item navbar-text" onClIck="renderBucketList()">Bucket List |</li>
 <li class="nav-item navbar-text" onClick="renderAbout()">About |</li>
-<li class="nav-item navbar-text" onClick="addBucketListForm()">Add Bucket List Item</li>
+<li class="nav-item navbar-text" onClick="addBucketListForm()">Add Bucket List Item |</li>
+<li class="nav-item navbar-text" onClick="renderSignUpForm()">Sign Up</li>
 </ul>
 </nav>
 </div>
