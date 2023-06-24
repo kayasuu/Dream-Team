@@ -49,3 +49,37 @@ function renderList(bucketList) {
   console.log("bucketlist is working!");
  return div;
  }
+
+ function renderEditForm(bucketList){
+  const form = document.createElement("form")
+  form.innerHTML = `
+  <label for="name">Name</label>
+  <input type="text" name="name" value="${bucketList.name}">
+  <label for="description">Description</label>
+  <input type="text" name="description" value="${bucketList.description}">
+  <label for="activity">Activity</label>
+  <input type="text" name="activity" value="${bucketList.activity}">
+  <label for="image">Image</label>
+  <input type="text" name="image" value="${bucketList.image}">
+  <input type="submit">
+  `;
+form.addEventListener("submit", (event)=>{
+event.preventDefault()
+const formData = new FormData(form);
+
+const data = {
+  name: formData.get("name"),
+  description: formData.get("description"),
+  activity: formData.get("activity"),
+  image: formData.get("image"),
+};
+
+axios.put(`/api/bucket/${bucketList._id}`, data).then((_)=>{
+  renderBucketList()
+}).catch((error)=>{
+  console.log(error)
+})
+})
+const page = document.getElementById("page")
+page.replaceChildren(form)
+ }
