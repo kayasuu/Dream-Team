@@ -16,6 +16,9 @@ function renderList(bucketList) {
   const div = document.createElement("div");
   div.classList.add("bucketListDiv");
 
+  const btnDiv = document.createElement("div")
+  btnDiv.setAttribute("class", "btn-div")
+
   const name = document.createElement("h2");
   name.textContent = bucketList.name;
 
@@ -28,24 +31,28 @@ function renderList(bucketList) {
   const image = document.createElement("img");
   image.src = bucketList.image;
 
+
   const deleteButton =  document.createElement("button");
   deleteButton.textContent = "Delete";
+  deleteButton.className = "btn-outline-secondary btn";
+
   deleteButton.addEventListener("click", () => {
      axios.delete(`api/bucket/${bucketList._id}`).then((_)=> {
          renderBucketList();
      })
   })
  
-  const editDiv = document.createElement('div');
-  editDiv.id = `edit-challenge-${bucketList._id}`;
   const editButton = document.createElement('button');
   editButton.textContent = 'Edit';
+  editButton.className = "btn-outline-secondary btn";
+
   editButton.addEventListener('click', () => {
      renderEditForm(bucketList);
   })
-  editDiv.append(editButton);
- 
-  div.append(name, description, activity, image,deleteButton,editDiv);
+
+  btnDiv.append(editButton, deleteButton)
+
+  div.append(name, description, activity, image, btnDiv);
   console.log("bucketlist is working!");
  return div;
  }
