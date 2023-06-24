@@ -28,27 +28,24 @@ function renderList(bucketList) {
   const image = document.createElement("img");
   image.src = bucketList.image;
 
- const deleteButton =  document.createElement("button");
- deleteButton.textContent = "Delete";
- deleteButton.addEventListener("click", () => {
-    axios.delete(`api/bucket/${bucketList._id}`).then((_)=> {
-        renderBucketList();
-    })
- })
-
- const editDiv = document.createElement('div');
- editDiv.id = `edit-challenge-${bucketList._id}`;
- const editButton = document.createElement('button');
- editButton.textContent = 'Edit';
- editButton.addEventListener('click', () => {
-    renderEditForm(bucketList);
- })
- editDiv.append(editButton);
-
-
- div.append(name, description, activity, image,deleteButton,editDiv);
+  const deleteButton =  document.createElement("button");
+  deleteButton.textContent = "Delete";
+  deleteButton.addEventListener("click", () => {
+     axios.delete(`api/bucket/${bucketList._id}`).then((_)=> {
+         renderBucketList();
+     })
+  })
+ 
+  const editDiv = document.createElement('div');
+  editDiv.id = `edit-challenge-${bucketList._id}`;
+  const editButton = document.createElement('button');
+  editButton.textContent = 'Edit';
+  editButton.addEventListener('click', () => {
+     renderEditForm(bucketList);
+  })
+  editDiv.append(editButton);
+ 
+  div.append(name, description, activity, image,deleteButton,editDiv);
   console.log("bucketlist is working!");
-return div;
-}
-
-
+ return div;
+ }
