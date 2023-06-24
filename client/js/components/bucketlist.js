@@ -47,8 +47,8 @@ function renderList(bucketList) {
  
   div.append(name, description, activity, image,deleteButton,editDiv);
   console.log("bucketlist is working!");
-return div;
-}
+ return div;
+ }
 
  function renderEditForm(bucketList){
   const form = document.createElement("form")
