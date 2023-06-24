@@ -25,6 +25,8 @@ mongoClient.connect().then(_ => {
     })
 }).catch(error => {
     console.log(error);
+}).finally(() => { // .finally(executeCodeRegardles)
+    console.log("Operation finished - bucketController.js has loaded")
 })
 
 router.all("/:id", (request, response, next) => {
