@@ -6,6 +6,8 @@ function chatGPTform() {
   form.innerHTML = `
 <label for="name">Destination:</label>
 <input type="text" name="name">
+<label for="days">Days:</label>
+<input type="text" name="days">
 <label for="activity">Activity:</label>
 <input type="text" name="activity">
 <input type="submit">
@@ -19,11 +21,12 @@ function chatGPTform() {
 
     const data = {
       name: formData.get("name"),
+      days: formData.get("days"),
       activity: formData.get("activity")
     };
 
     //GPT post items from form
-    const prompt = `I want to go to ${data.name} and I want to do ${data.activity}.`;
+    const prompt = `I want to go to ${data.name} for ${data.days} days and I want to go ${data.activity}.`;
 
     axios.post("/api/gpt", { prompt })
     .then((response) => {
