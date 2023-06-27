@@ -10,11 +10,14 @@ const gptClassifySentiment = async (prompt) => {
     //comment out?
     const axios = require('axios');
      
-    
+    //Comment this out and declare system prompt in separate js file, depending on the function :)
     const systemPrompt = `
     You are an AI trained to provide top-tier travel expertise of a professional travel agent. 
     Your mission is to reflect on user input and come up with an itinerary for their trip. Split this itinerary up by morning, afternoon, evening.
+    Write an itinerary for each day, based on input below and do NOT ask a question.
     `;
+    //
+
     const data = {
         model: 'gpt-3.5-turbo',
         messages: [
