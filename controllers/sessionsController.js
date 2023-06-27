@@ -2,7 +2,8 @@ const express = require("express");
 router = express.Router();
 
 const { MongoClient } = require("mongodb");
-const mongoClient = new MongoClient("mongodb://127.0.0.1:27017/")
+const mongoClient = new MongoClient(process.env.MONGO_DB_CONNECTION_STRING);
+
 let db;
 mongoClient.connect().then(_ => {
     db = mongoClient.db("bucket-list");
@@ -36,7 +37,8 @@ router.post("/", (request, response) => {
         request.session.name = user.name;
         request.session.email = user.email;
 
-        response.json({ message: "logged in successfully" });
+        response.json({ message: "logged in successfully",
+                        sessionEmail: request.session.email });
     });
 })
 

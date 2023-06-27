@@ -4,7 +4,7 @@ require("dotenv").config();
 
 // Mongo DB setup 
 const { ObjectId, MongoClient } = require("mongodb"); // to grab objectIDs for post and such
-const mongoClient = new MongoClient("mongodb://127.0.0.1:27017/") // Create a client for MongoDB using the Mongo DB URI
+const mongoClient = new MongoClient(process.env.MONGO_DB_CONNECTION_STRING); // Create a client for MongoDB using the Mongo DB URI
 
 // Create global variables to reference later from the .connect
 let usersCollection;

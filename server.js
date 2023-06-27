@@ -21,6 +21,8 @@ app.use(
 
 const bucketController = require("./controllers/bucketController.js")
 app.use("/api/bucket", bucketController);
+const itinController = require("./controllers/itinController.js")
+app.use("/api/bucket", itinController);
 const usersController = require("./controllers/usersController.js")
 app.use("/api/users", usersController);
 const sessionsController = require("./controllers/sessionsController.js")
