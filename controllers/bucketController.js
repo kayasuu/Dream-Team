@@ -10,7 +10,7 @@ let bucketCollection;
 //initialise DB - updated
 mongoClient.connect().then(_ => {
     const db = mongoClient.db("bucket-list");
-    db.dropCollection("bucket-list-data");
+    // db.dropCollection("bucket-list-data");
     bucketCollection = db.collection("bucket-list-data");
 
     bucketCollection.find().toArray()

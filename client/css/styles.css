@@ -1,5 +1,6 @@
 * {
   margin: 4px;
+  
 }
 .navbar-text:hover {
   text-decoration: underline;
@@ -21,6 +22,16 @@ img {
 margin: 5px;
 }
 
+#name-form{
+  width: 200px;
+}
+
 .form-control{
   width: 350px;
+}
+
+.alert-danger{
+  width: 300px;
+  font-size: 14px;
+  text-align: center;
 }
