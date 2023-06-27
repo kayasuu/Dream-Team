@@ -15,12 +15,30 @@ function setHeaderHtml() {
 <li class="nav-item navbar-text" onClick="chatGPTform()">ChatGPT</li>
 </ul>
 <ul id="navlist" class="navbar-nav mb-lg-0">
-<li class="nav-item navbar-text" onClick="renderSignUpForm()">Sign Up |</li>
-<li class="nav-item navbar-text" onClick="renderLoginForm()">Login |</li>
-<li class="nav-item navbar-text" onClick="logout()">Logout</li>
+<li class="nav-item navbar-text" id="signup" onClick="renderSignUpForm()">Sign Up |</li>
+<li class="nav-item navbar-text" id="login" onClick="renderLoginForm()">Login |</li>
+<li class="nav-item navbar-text d-none" id="logout" onClick="logout()">Logout</li> 
 </ul>
 </nav>
 </div>
 `;
+}
+
+function setLoggedOutHeader(){  
+  let loginOpt = document.getElementById("login")
+  let signupOpt = document.getElementById("signup")
+  let logoutOpt = document.getElementById("logout")
+  logoutOpt.classList.add("d-none")
+  loginOpt.classList.remove("d-none")
+  signupOpt.classList.remove("d-none")
+}
+
+function setLoggedInHeader(){
+  let loginOpt = document.getElementById("login")
+  let signupOpt = document.getElementById("signup")
+  let logoutOpt = document.getElementById("logout")
+  loginOpt.classList.add("d-none")
+  signupOpt.classList.add("d-none")
+  logoutOpt.classList.remove("d-none")
 }
 

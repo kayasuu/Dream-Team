@@ -12,8 +12,9 @@ form.innerHTML = `
 <input type="password" name="password" class="form-control">
 <input type="submit" class="btn btn-outline-dark">
 `;
-
-page.replaceChildren(h2, form)
+const errorMsg = document.createElement("p")
+errorMsg.id = "error-msg";
+page.replaceChildren(h2, form, errorMsg)
 
 form.addEventListener("submit", (event)=>{
     event.preventDefault()
@@ -25,8 +26,12 @@ form.addEventListener("submit", (event)=>{
         password: formData.get("password"),
     };
 axios.post("/api/session", data).then((_)=>{
-    renderHeader();
+    setLoggedInHeader()
     renderBucketList();
+}).catch((error)=>{
+    console.log(error)
+    // errorMsg.classList = "alert alert-danger"       
+    // errorMsg.textContent = error.response.data.message;
 });
 });
 }
