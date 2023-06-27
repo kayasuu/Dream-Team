@@ -3,6 +3,8 @@
 }
 .navbar-text:hover {
   text-decoration: underline;
+  color: #212529;
+  cursor: default;
 }
 
 .bucketListDiv{
