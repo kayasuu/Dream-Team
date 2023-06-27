@@ -27,11 +27,11 @@ const data = {
     password: formData.get("password"),
 };
 
-axios.post("/api/users", data).then((_ =>{
-    renderBucketList();
-}).catch((error) =>{
-    errorMsg.textContent = error.response.data.message
-})
-)
+axios.post("/api/users", data)
+.then((_) => {
+  renderBucketList();
+}).catch((error) => {            
+    errorMsg.textContent = error.response.data.message;
+});
 })
 }
