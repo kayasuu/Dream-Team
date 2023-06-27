@@ -1,6 +1,6 @@
 function logout() {
     axios.delete("/api/session").then((_) => {
-        renderHeader();
+        setLoggedOutHeader()
         renderBucketList();
     });
 }
