@@ -14,7 +14,7 @@ function renderBucketList() {
 
 function renderList(bucketList) {
   const div = document.createElement("div");
-  div.classList.add("bucketListDiv");
+  div.classList ="bucketListDiv";
 
   const btnDiv = document.createElement("div")
   btnDiv.setAttribute("class", "btn-div")
@@ -24,17 +24,18 @@ function renderList(bucketList) {
 
   const description = document.createElement("p");
   description.textContent = bucketList.description;
+  description.classList = "mb-1"
 
   const activity = document.createElement("p");
   activity.textContent = bucketList.activity;
-
+  activity.classList = "mb-1"
   const image = document.createElement("img");
   image.src = bucketList.image;
 
 
   const deleteButton =  document.createElement("button");
   deleteButton.textContent = "Delete";
-  deleteButton.className = "btn-outline-secondary btn";
+  deleteButton.className = "btn-outline-dark btn";
 
   deleteButton.addEventListener("click", () => {
      axios.delete(`api/bucket/${bucketList._id}`).then((_)=> {
@@ -44,7 +45,7 @@ function renderList(bucketList) {
  
   const editButton = document.createElement('button');
   editButton.textContent = 'Edit';
-  editButton.className = "btn-outline-secondary btn";
+  editButton.className = "btn-outline-dark btn";
 
   editButton.addEventListener('click', () => {
      renderEditForm(bucketList);
