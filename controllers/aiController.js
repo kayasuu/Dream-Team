@@ -4,10 +4,11 @@ require("dotenv").config();
 const { gptClassifySentiment } = require('../utilities/gptUtil');
 
 router.post('/', async (request, response) => {
-    const prompt = request.body.prompt;
-    console.log('Received Prompt:', prompt);  
+    const {prompt, systemPrompt} = request.body;
+    console.log(request.body)
+
     try {
-        const result = await gptClassifySentiment(prompt);
+        const result = await gptClassifySentiment(prompt, systemPrompt);
         console.log('GPT Result:', result);
         response.json(result);
     } catch (error) {
