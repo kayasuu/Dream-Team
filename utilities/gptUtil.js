@@ -28,8 +28,9 @@ const gptClassifySentiment = async (prompt, systemPrompt) => {
 
     try {
         const response = await openai.createChatCompletion(data);
-        console.log('OpenAI API Response:', response);  // Updated line
+        // console.log('OpenAI API Response:', response);  // Updated line
         let r = response.data.choices[0].message.content;
+        console.log(response.data.choices)
         if (r == '') {
             r = 'N/A';
         }

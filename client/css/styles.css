@@ -34,3 +34,14 @@ margin: 5px;
   font-size: 14px;
   text-align: center;
 }
+
+.bucketListDiv {
+  border: 1px solid #000;
+
+  transition: transform 0.3s ease;
+}
+
+.bucketListDiv:hover {
+  border-color: rgb(117, 116, 116);
+  transform: scale(1.01);
+}
