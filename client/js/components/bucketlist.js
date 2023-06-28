@@ -24,11 +24,11 @@ function renderList(bucketList) {
 
   const description = document.createElement("p");
   description.textContent = bucketList.description;
-  description.classList = "mb-1"
+  description.classList.add("mb-1");
 
   const activity = document.createElement("p");
   activity.textContent = bucketList.activity;
-  activity.classList = "mb-1"
+  activity.classList.add("mb-1");
 
   const image = document.createElement("img");
   image.src = bucketList.image;
