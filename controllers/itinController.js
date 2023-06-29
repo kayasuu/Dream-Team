@@ -9,6 +9,7 @@ let itinerariesCollection;
 
 mongoClient.connect().then(_ => {
     const db = mongoClient.db("bucket-list");
+    db.dropCollection("itineraries");
     itinerariesCollection = db.collection("itineraries");
 
     itinerariesCollection.find().toArray()
@@ -36,7 +37,8 @@ mongoClient.connect().then(_ => {
                     Evening - End your trip with a sunset dinner at a rooftop restaurant with a view of the city.
                     `,
                     type: [ "foodie", "family friendly", "city experiences" ],
-                    keywords: ["City Experiences", "Greece", "Athens", "Plaka", "Acropolis"]   
+                    keywords: ["City Experiences", "Greece", "Athens", "Plaka", "Acropolis"],
+                    createdBy: "649d3118612bcb54a04af5b0" // user3
                 },
                 {   
                     name: "France", 
@@ -59,7 +61,8 @@ mongoClient.connect().then(_ => {
                     Evening - End your trip with a romantic dinner cruise along the Seine River, enjoying the beautiful views of the city at night while savoring delicious French cuisine.
                     `,
                     type: [ "foodie", "family friendly", "city experiences" ],
-                    keyword: ["City Experiences", "France", "Palace of Versailles", "Notre-Dame", "Paris"]
+                    keyword: ["City Experiences", "France", "Palace of Versailles", "Notre-Dame", "Paris"],
+                    createdBy: "649d3118612bcb54a04af5ae" // user1
                 }
             ])
         }
