@@ -17,9 +17,6 @@ function renderList(bucketList) {
   const div = document.createElement("div");
   div.classList.add("bucketListDiv");
 
-  const btnDiv = document.createElement("div")
-  btnDiv.setAttribute("class", "btn-div")
-
   const name = document.createElement("h2");
   name.textContent = bucketList.name;
 
@@ -42,7 +39,6 @@ function renderList(bucketList) {
   console.log("bucketlist is working!");
   return div;
  }
-
 
 //added another page for buttons etc
  function renderBucketPage(bucketList){
