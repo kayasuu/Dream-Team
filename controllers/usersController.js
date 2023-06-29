@@ -12,13 +12,16 @@ let usersCollection;
 mongoClient.connect() // Connect to Mongo DB using Mongo Client we created in Step 2
 .then((response) => { // then(doSomethingOnSuccess)
   const db = mongoClient.db("bucket-list") // Create a new DB once mongo client has established connection
+  db.dropCollection("users") // Create collection(s) using the DB
   usersCollection = db.collection("users") // Create collection(s) using the DB
 
   usersCollection.find().toArray()
   .then(documents => {
     if (documents.length < 1) {
       usersCollection.insertMany([ // insert new document data / records to collection
-        { name: "test" , email: "test", password: "$2b$10$H2Hayn53.tPT6UKSl1AVPOa/cKI/Q8NYu0BnsDNymvtJ38rFb/cTe" } // password is test
+        { name: "user1" , email: "user1@email.com", password: "$2b$10$H2Hayn53.tPT6UKSl1AVPOa/cKI/Q8NYu0BnsDNymvtJ38rFb/cTe" }, // password is test
+        { name: "user2" , email: "user2@email.com", password: "$2b$10$H2Hayn53.tPT6UKSl1AVPOa/cKI/Q8NYu0BnsDNymvtJ38rFb/cTe" }, // password is test
+        { name: "user3" , email: "user3@email.com", password: "$2b$10$H2Hayn53.tPT6UKSl1AVPOa/cKI/Q8NYu0BnsDNymvtJ38rFb/cTe" } // password is test
       ])
     }
   }).catch(error => { // .catch(tellUsWhatTheErrorIs)
