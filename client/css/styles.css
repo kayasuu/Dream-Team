@@ -7,6 +7,10 @@
   cursor: default;
 }
 
+.navbar{
+  margin: auto;
+  width: 80%
+}
 .bucketListDiv{
   margin: auto;
   padding: 5px;
@@ -37,7 +41,6 @@ margin: 5px;
 
 .bucketListDiv {
   border: 1px solid #000;
-
   transition: transform 0.3s ease;
 }
 

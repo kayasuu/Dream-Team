@@ -30,8 +30,8 @@ axios.post("/api/session", data).then((_)=>{
     renderBucketList();
 }).catch((error)=>{
     console.log(error)
-    // errorMsg.classList = "alert alert-danger"       
-    // errorMsg.textContent = error.response.data.message;
+    errorMsg.classList = "alert alert-danger"       
+    errorMsg.textContent = error.response.data.message;
 });
 });
 }
