@@ -11,9 +11,19 @@
   margin: auto;
   width: 80%
 }
+
 .bucketListDiv{
   margin: auto;
   padding: 5px;
+}
+
+.home-page-div{
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid black;
+  width: 450px;
+  height: 350px;
 }
 
 img {
