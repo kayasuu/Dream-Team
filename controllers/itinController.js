@@ -83,7 +83,7 @@ router.all("/:id", (request, response, next) => {
 })
 
 //Get all items on bucket list
-router.get("/", (_, response) => {
+router.get("/:id", (_, response) => {
     itinerariesCollection.find().toArray().then((result) => {
         response.json(result);
     });

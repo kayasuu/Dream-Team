@@ -24,6 +24,10 @@ function addBucketListForm() {
       description: formData.get("description"),
       activity: formData.get("activity"),
       image: formData.get("image"),
+      savedBy: [],
+      likedBy: [],
+      itinerary: {},
+      createdBy: session.id
     };
 
     //prettier-ignore

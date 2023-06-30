@@ -4,8 +4,6 @@ const h2 = document.createElement("h2");
 h2.textContent = "Login";
 const form = document.createElement("form");
 form.innerHTML = `
-<label for="name" class="form-label mb-0">Name:</label>
-<input type="text" name="name" class="form-control" id="name-form">
 <label for="email" class="form-label mb-0">Email: </label>
 <input type="email" name="email" class="form-control">
 <label for="password" class="form-label mb-0">Password: </label>
