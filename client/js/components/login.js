@@ -29,8 +29,8 @@ axios.post("/api/session", data).then((response)=>{
     renderBucketList(response.data.email, response.data.name);
 }).catch((error)=>{
     console.log(error)
-    // errorMsg.classList = "alert alert-danger"       
-    // errorMsg.textContent = error.response.data.message;
+    errorMsg.classList = "alert alert-danger"       
+    errorMsg.textContent = error.response.data.message;
 });
 });
 }
