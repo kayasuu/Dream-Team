@@ -5,6 +5,7 @@ const { MongoClient } = require("mongodb");
 const mongoClient = new MongoClient(process.env.MONGO_DB_CONNECTION_STRING);
 
 let db;
+
 mongoClient.connect().then(_ => {
     db = mongoClient.db("bucket-list");
     usersCollection = db.collection("users");
@@ -38,10 +39,10 @@ router.post("/", (request, response) => {
         request.session.userid = user._id;
         request.session.name = user.name;
         request.session.email = user.email;
-        console.log(request.session)
+
         response.json({ message: "logged in successfully",
-                        sessionEmail: request.session.email,
-                        sessionID: request.session.userid });
+                        email: request.session.email,
+                        name: request.session.name });
     });
 })
 

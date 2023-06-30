@@ -23,9 +23,10 @@ form.addEventListener("submit", (event)=>{
         email: formData.get("email"),
         password: formData.get("password"),
     };
-axios.post("/api/session", data).then((_)=>{
+axios.post("/api/session", data).then((response)=>{
+    passback(response.data.email, response.data.name)
     setLoggedInHeader()
-    renderBucketList();
+    renderBucketList(response.data.email, response.data.name);
 }).catch((error)=>{
     console.log(error)
     // errorMsg.classList = "alert alert-danger"       
