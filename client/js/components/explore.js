@@ -67,25 +67,25 @@ function renderExploreForm(bucketList){
       event.preventDefault();
       const formData = new FormData(form);
   
-      const activites = []
+      const activities = []
       for(let data of formData.entries()){
         if (data[0] === 'activities') {
-          activites.push(data[1])
+          activities.push(data[1])
         }
       }
-      let activitesString = ""
-      for (i = 0; i < activites.length; i++) {
-        if (i < activites.length-1) {
-          activitesString += activites[i] + ' and '
+      let activitiesString = ""
+      for (i = 0; i < activities.length; i++) {
+        if (i < activities.length-1) {
+          activitiesString += activities[i] + ' and '
         } else {
-        activitesString += activites[i] + '.'
+          activitiesString += activities[i] + '.'
         }
       }
-      console.log(activitesString)
+
       const data = {
         days: formData.get("days"),
         budget: formData.get("budget"),
-        activity: activitesString
+        activity: activitiesString
       };
   
       //GPT post items from form
@@ -97,20 +97,30 @@ function renderExploreForm(bucketList){
       Write an itinerary for each day, based on input below and do NOT ask a question. Do NOT use filler words before or after the response.
       Make sure every new line start with either the day, or "Morning:" "Evening:" or "Afternoon:". Make sure the day, time of day and activities are all on new lines.
       `;
+    
+      const patchData = {
+        itinerary: {
+          length: data["days"],
+          budget: data["budget"],
+          activity: activities,
+          description: ''
+        }
+      } 
+      axios.patch(`/api/bucket/${bucketList._id}`, patchData)
+      .then(
       axios.post("/api/gpt", { prompt, systemPrompt })
       .then((response) => {
+      
         console.log("Itineraries generated")
         console.log("Response data: ", response.data);
         renderItinerary(response.data);
-      })
+      }))
       .catch((error) => {
         console.log(error);
       });
-      
-  
+
       //functions to render itinerary
       renderItinerary();
-  
     }).catch((error)=>{
       console.log(error)
     });
@@ -157,11 +167,25 @@ function renderExploreForm(bucketList){
           backButton.textContent = `Back to ${bucketList.name}`;
         backButton.className = "btn-outline-dark btn";
         backButton.addEventListener('click', () => {
-            renderBucketPage(bucketList);
-  })
+          const itinData = { itinerary : "" };
+          axios.patch(`/api/bucket/${bucketList._id}`, itinData).then((_) => {
+            console.log("Itin cleared")
+            renderBucketList(bucketList);
+          });
+        })
 
+        const saveButton = document.createElement('button');
+          saveButton.textContent = `Save to ${bucketList.name}`;
+        saveButton.className = "btn-outline-dark btn";
+        saveButton.addEventListener('click', () => {
+          const itinData = { "itinerary.description" : document.querySelector(".itineraryDiv").innerHTML };
+          axios.patch(`/api/bucket/${bucketList._id}`, itinData).then((_) => {
+            console.log("Itin added")
+            renderBucketList(bucketList);
+          });
+        })
 
-        page.replaceChildren(h2, itineraryDiv, backButton);
+        page.replaceChildren(h2, itineraryDiv, backButton, saveButton);
       }   
       
       };

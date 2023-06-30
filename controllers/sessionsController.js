@@ -15,6 +15,7 @@ mongoClient.connect().then(_ => {
 })
 
 router.get("/", (request, response) => {
+    console.log(request.session)
     if (!request.session.email) {
         response.status(401).json({
             "message": "user not logged in"
@@ -34,11 +35,13 @@ router.post("/", (request, response) => {
             return;
         }
 
+        request.session.userid = user._id;
         request.session.name = user.name;
         request.session.email = user.email;
-
+        console.log(request.session)
         response.json({ message: "logged in successfully",
-                        sessionEmail: request.session.email });
+                        sessionEmail: request.session.email,
+                        sessionID: request.session.userid });
     });
 })
 

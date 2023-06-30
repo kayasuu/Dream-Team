@@ -62,6 +62,8 @@ function renderList(bucketList) {
   const image = document.createElement("img");
   image.src = bucketList.image;
 
+
+
   const deleteButton =  document.createElement("button");
   deleteButton.textContent = "Delete";
   deleteButton.className = "btn-outline-dark btn";
@@ -95,6 +97,23 @@ function renderList(bucketList) {
 
   page.innerHTML = "";
   page.append(name, description, activity, image, btnDiv);
+
+  if (bucketList.itinerary != "") {
+    const itinerarySection = document.createElement("section")
+    const itinData = bucketList.itinerary
+    // const numOfDays = itinData['length']
+    // const budget = itinData['budget']
+    // const activities = itinData['activity']
+    const description = itinData['description']
+
+    const heading = document.createElement("h4")
+    heading.textContent = "Your saved itinerary below"
+    const itinDescription = document.createElement("p")
+    itinDescription.innerHTML = description
+    itinerarySection.append(heading, itinDescription)
+    image.insertAdjacentElement("afterend", itinerarySection)
+  }
+  
   console.log("page is working!");
   return page;
 }

@@ -12,8 +12,8 @@ const MongoStore = require("connect-mongo");
 app.use(
     expressSession({
         store: MongoStore.create({
-            mongoUrl: "mongodb://127.0.0.1:27017/",
-            dbName: "scavenger_hunt"
+            mongoUrl: process.env.MONGO_DB_CONNECTION_STRING,
+            dbName: "bucket-list"
         }),
         secret: process.env.EXPRESS_SESSION_SECRET_KEY
     })
@@ -21,8 +21,8 @@ app.use(
 
 const bucketController = require("./controllers/bucketController.js")
 app.use("/api/bucket", bucketController);
-const itinController = require("./controllers/itinController.js")
-app.use("/api/bucket", itinController);
+// const itinController = require("./controllers/itinController.js")
+// app.use("/api/itin", itinController);
 const usersController = require("./controllers/usersController.js")
 app.use("/api/users", usersController);
 const sessionsController = require("./controllers/sessionsController.js")
