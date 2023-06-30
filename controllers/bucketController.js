@@ -10,7 +10,7 @@ let bucketCollection;
 //initialise DB - updated
 mongoClient.connect().then(_ => {
     const db = mongoClient.db("bucket-list");
-    db.dropCollection("bucket-list-data");
+    // db.dropCollection("bucket-list-data");
     bucketCollection = db.collection("bucket-list-data");
 
     bucketCollection.find().toArray()
@@ -30,7 +30,7 @@ mongoClient.connect().then(_ => {
                     },
                     savedBy: [],
                     likedBy: [],
-                    createdBy: "649d302a0f786ea868ba0286"
+                    createdBy: "user1@email.com"
                 },
                 {
                     name: "Vinicunca", 
@@ -40,7 +40,7 @@ mongoClient.connect().then(_ => {
                     itinerary: {},
                     savedBy: [],
                     likedBy: [],
-                    createdBy: "649d302a0f786ea868ba0286"
+                    createdBy: "user1@email.com"
                 },
                 { 
                     name: "Salar de Uyuni", 
@@ -50,7 +50,7 @@ mongoClient.connect().then(_ => {
                     itinerary: {},
                     savedBy: [],
                     likedBy: [],
-                    createdBy: "649d302a0f786ea868ba0286"
+                    createdBy: "user1@email.com"
                 },
                 {   // user2 bucket list items
                     name: "Eiffel Tower", 
@@ -60,7 +60,7 @@ mongoClient.connect().then(_ => {
                     itinerary: {},
                     savedBy: [],
                     likedBy: [],
-                    createdBy: "649d3118612bcb54a04af5af"
+                    createdBy: "user2@email.com"
                 },
                 {
                     name: "The Lourve", 
@@ -70,7 +70,7 @@ mongoClient.connect().then(_ => {
                     itinerary: {},
                     savedBy: [],
                     likedBy: [],
-                    createdBy: "649d3118612bcb54a04af5af"
+                    createdBy: "user2@email.com"
                 },
                 { 
                     name: "Arc de Triomphe", 
@@ -80,7 +80,7 @@ mongoClient.connect().then(_ => {
                     itinerary: {},
                     savedBy: [],
                     likedBy: [],
-                    createdBy: "649d3118612bcb54a04af5af"
+                    createdBy: "user2@email.com"
                 },
                 {   // user3 bucket list items
                     name: "Colosseum", 
@@ -90,7 +90,7 @@ mongoClient.connect().then(_ => {
                     itinerary: {},
                     savedBy: [],
                     likedBy: [],
-                    createdBy: "649d3118612bcb54a04af5b0"
+                    createdBy: "user3@email.com"
                 },
                 {
                     name: "Trevi Fountain", 
@@ -100,7 +100,7 @@ mongoClient.connect().then(_ => {
                     itinerary: {},
                     savedBy: [],
                     likedBy: [],
-                    createdBy: "649d3118612bcb54a04af5b0"
+                    createdBy: "user3@email.com"
                 },
                 { 
                     name: "St. Peter's Basilica", 
@@ -110,7 +110,7 @@ mongoClient.connect().then(_ => {
                     itinerary: {},
                     savedBy: [],
                     likedBy: [],
-                    createdBy: "649d3118612bcb54a04af5b0"
+                    createdBy: "user3@email.com"
                 }
             ])
         }

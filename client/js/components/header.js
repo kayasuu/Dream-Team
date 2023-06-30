@@ -3,6 +3,15 @@ function renderHeader() {
   renderHomePage()
 }
 
+let email = ''
+let username = ''
+
+function passback(newEmail, newName) {
+  email = newEmail,
+  username = newName
+  console.log(email, username)
+}
+
 function setHeaderHtml() {
   const header = document.getElementById("header-nav");
   header.innerHTML = `
@@ -10,14 +19,17 @@ function setHeaderHtml() {
 <div class="container">
 <nav class="navbar navbar-expand-lg border-bottom border-bottom-dark">
 <ul id="navlist" class="navbar-nav me-auto mb-2 mb-lg-0">
+
 <li class="nav-item navbar-text" onClick="renderHomePage()">Home</li>
-<li class="nav-item navbar-text" onClick="renderAbout()">About</li>
-<li class="nav-item navbar-text d-none" id="bucket-list" onClIck="renderBucketList()">Bucket List</li>
-<li class="nav-item navbar-text d-none" id="add-bucket-list" onClick="addBucketListForm()">Add Bucket List Item</li>
+<li class="nav-item navbar-text" onClick="renderAbout()">About |</li>
+<li class="nav-item navbar-text d-none" id="bucket-list" onClIck="renderBucketList(email)">Bucket List |</li>
+<li class="nav-item navbar-text d-none" id="add-bucket-list" onClick="addBucketListForm(email)">Add Bucket List Item |</li>
+<li class="nav-item navbar-text" onClick="chatGPTform()">ChatGPT</li>
 </ul>
 <ul id="navlist" class="navbar-nav mb-lg-0">
-<li class="nav-item navbar-text" id="signup" onClick="renderSignUpForm()">Sign Up </li>
-<li class="nav-item navbar-text" id="login" onClick="renderLoginForm()">Login </li>
+<li class="nav-item navbar-text" id="signup" onClick="renderSignUpForm()">Sign Up |</li>
+<li class="nav-item navbar-text" id="login" onClick="renderLoginForm(passback)">Login |</li>
+
 <li class="nav-item navbar-text d-none" id="logout" onClick="logout()">Logout</li> 
 </ul>
 </nav>
@@ -58,4 +70,3 @@ function setLoggedInHeader(){
   addBucketList.classList.remove("d-none")
   bucketList.classList.remove("d-none")
 }
-

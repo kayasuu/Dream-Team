@@ -1,4 +1,4 @@
-function addBucketListForm() {
+function addBucketListForm(email, username) {
   const page = document.getElementById("page");
   const h2 = document.createElement("h2");
   h2.textContent = "Add to your Bucketlist";
@@ -17,25 +17,26 @@ function addBucketListForm() {
   page.replaceChildren(h2, form);
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const formData = new FormData(form);
-
-    const data = {
-      name: formData.get("name"),
-      description: formData.get("description"),
-      activity: formData.get("activity"),
-      image: formData.get("image"),
-      savedBy: [],
-      likedBy: [],
-      itinerary: {},
-      createdBy: session.id
-    };
-
-    //prettier-ignore
-    axios.post("/api/bucket", data).then((_) => {
-        console.log("Bucketlist Item added")
-    renderBucketList();
-  }).catch((error)=>{
-    console.log(error)
-  });
-  });
+    
+      const formData = new FormData(form);
+  
+      const data = {
+        name: formData.get("name"),
+        description: formData.get("description"),
+        activity: formData.get("activity"),
+        image: formData.get("image"),
+        savedBy: [],
+        likedBy: [],
+        itinerary: {},
+        createdBy: email
+      };
+      console.log(data)
+      //prettier-ignore
+      axios.post("/api/bucket", data).then((_) => {
+          console.log("Bucketlist Item added")
+      renderBucketList();
+    }).catch((error)=>{
+      console.log(error)
+    });
+  })
 }

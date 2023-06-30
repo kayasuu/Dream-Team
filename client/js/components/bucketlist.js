@@ -1,9 +1,9 @@
-function renderBucketList() {
+function renderBucketList(email, username) {
   const page = document.getElementById("page");
   const paragraph = document.createElement("p");
   paragraph.textContent = "Loading..."; // Aiming to update this later to something more creative
   page.replaceChildren(paragraph);
-
+  console.log(email, username)
   axios.get("/api/bucket").then((response) => {
     const listElements = response.data.map((bucketList) =>
       renderList(bucketList)
@@ -109,7 +109,7 @@ function renderList(bucketList) {
     itinerarySection.append(heading, itinDescription)
     image.insertAdjacentElement("afterend", itinerarySection)
   }
-  
+
   console.log("page is working!");
   return page;
 }
