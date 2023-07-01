@@ -1,20 +1,33 @@
 * {
   margin: 4px;
-  
 }
-.navbar-text:hover {
-  color: #212529;
-  cursor: default;
+
+body{
+  background-color: #bbc9cf;
+}
+
+h1{
+  text-align: center;
+}
+
+img {
+  width: 40%;
+  height: 40%;
 }
 
 .navbar{
   margin: auto;
   width: 80%
 }
+.navbar-text:hover {
+  color: #212529;
+  cursor: default;
+}
 
 .bucketListDiv{
   margin: auto;
-  padding: 5px;
+  padding: 10px;
+  text-align: center;
 }
 
 .home-page-div{
@@ -26,17 +39,8 @@
   height: 350px;
 }
 
-img {
-  width: 40%;
-  height: 40%;
-}
-
 .btn{
 margin: 5px;
-}
-
-#name-form{
-  width: 200px;
 }
 
 .form-control{
@@ -57,4 +61,13 @@ margin: 5px;
 .bucketListDiv:hover {
   border-color: rgb(117, 116, 116);
   transform: scale(1.01);
+}
+
+.img-div > img{
+  width: 30%;
+  height: 30%;
+}
+
+#name-form{
+  width: 200px;
 }
