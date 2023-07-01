@@ -1,6 +1,7 @@
 function howTo(){
     const page = document.getElementById("page");
     page.innerHTML = `
+    <div class="centre">
     <h2>How To</h2>
 <h4>Home</h4>
 <p class="display-p mb-1">
@@ -34,6 +35,6 @@ function howTo(){
     Explore is a shared feed where things get exciting and you can start seeing other peoples itineraries. Feel free to
     add from this as well or scroll to discover.<br />EXPLORE EVERYONE'S DREAM DESTINATIONS!
 </p>
-
+</div>
     `
 }
