@@ -45,7 +45,7 @@ function renderList(bucketList) {
  function renderBucketPage(bucketList){
   const page = document.getElementById("page");
 
-  const name = document.createElement("h2");
+  const name = document.createElement("h1");
   name.textContent = bucketList.name;
 
   const reflections = document.createElement("p");
@@ -54,6 +54,19 @@ function renderList(bucketList) {
 
   const image = document.createElement("img");
   image.src = bucketList.image;
+
+  const itinerarySection = document.createElement("section")
+  const description = bucketList.itinerary['description']
+  const heading = document.createElement("h3")
+  const itinDescription = document.createElement("p")
+  if (!description) {
+    heading.textContent = "There is currently no itinerary saved."
+    itinDescription.innerHTML = "Please press Plan Itinerary for your future holiday!"
+  } else {
+    heading.textContent = "Your itinerary below"
+    itinDescription.innerHTML = description
+  }
+  itinerarySection.append(heading, itinDescription)
 
   const deleteButton =  document.createElement("button");
   deleteButton.textContent = "Delete";
@@ -87,23 +100,7 @@ function renderList(bucketList) {
   btnDiv.append(editButton, deleteButton, exploreButton)
 
   page.innerHTML = "";
-  page.append(name, reflections, image, btnDiv);
-
-  if (bucketList.itinerary != "") {
-    const itinerarySection = document.createElement("section")
-    const itinData = bucketList.itinerary
-    // const numOfDays = itinData['length']
-    // const budget = itinData['budget']
-    // const activities = itinData['activity']
-    const description = itinData['description']
-
-    const heading = document.createElement("h4")
-    heading.textContent = "Your saved itinerary below"
-    const itinDescription = document.createElement("p")
-    itinDescription.innerHTML = description
-    itinerarySection.append(heading, itinDescription)
-    image.insertAdjacentElement("afterend", itinerarySection)
-  }
+  page.append(name, reflections, image, itinerarySection, btnDiv);
 
   console.log("page is working!");
   return page;
