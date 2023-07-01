@@ -1,3 +1,5 @@
+// code should work goddamnit
+
 function renderExploreForm(bucketList){
   const page = document.getElementById("page");
   const h2 = document.createElement("h2");
