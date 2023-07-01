@@ -11,11 +11,9 @@ function renderBucketList(email, username) {
           userItems.push(item)
         }
       })
-      console.log(userItems)
     const listElements = userItems.map((bucketList) => 
       renderList(bucketList)
     );
-    console.log(listElements)
     page.replaceChildren(...listElements);
 });
 }
@@ -40,7 +38,6 @@ function renderList(bucketList) {
 
   div.append(name, reflections, image);
   console.log("bucketlist is working!");
-  console.log(div)
   return div;
 }
 
@@ -55,7 +52,6 @@ function renderList(bucketList) {
   reflections.textContent = bucketList.description;
   reflections.classList.add("mb-1");
 
-
   const image = document.createElement("img");
   image.src = bucketList.image;
 
@@ -65,7 +61,7 @@ function renderList(bucketList) {
 
   deleteButton.addEventListener("click", () => {
      axios.delete(`api/bucket/${bucketList._id}`).then((_)=> {
-         renderBucketList();
+         renderBucketList(email);
      })
   })
  
@@ -132,7 +128,7 @@ function renderEditForm(bucketList){
   };
 
   axios.put(`/api/bucket/${bucketList._id}`, data).then((_)=>{
-    renderBucketList()
+    renderBucketList(email)
   }).catch((error)=>{
     console.log(error)
   })
