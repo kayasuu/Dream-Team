@@ -1,6 +1,7 @@
 function renderHomePage(){
     const page = document.getElementById("page");
     page.innerHTML = `
+    <div class="centre">
     <h2>Welcome to Bucket List</h2>
     <p class="display-p">
     Welcome to Bucket List, the ultimate destination for travel enthusiasts and adventure seekers! Curate your dream destinations and activities, and let us help you bring your bucket list to life. 
@@ -11,6 +12,7 @@ function renderHomePage(){
     </p>
     <div class="img-div d-flex align-items-center">
     <img class="mx-auto" src="https://i.ibb.co/d4Px2MB/bucket-list-AI-pic.png" alt="person sits on a big silver bucket slightly hunched over looking at a book, positioned on a cliff looking over at a lake and some mountains"></img>
+    </div>
     </div>
 `
 
