@@ -8,11 +8,8 @@ function renderExplore(email, username) {
     const userItems = []
     response.data.forEach((item) => {
         if (item["createdBy"] !== email) {
-          console.log("success")
           userItems.push(item)
         }
-        console.log(`${item["createdBy"]} -- ${email}`)
-        console.log(item["createdBy"] != email)
       })
     const listElements = userItems.map((bucketList) => 
       renderExploreList(bucketList)
@@ -58,25 +55,20 @@ function renderExploreList(bucketList) {
   const image = document.createElement("img");
   image.src = bucketList.image;
 
-  page.innerHTML = "";
-  page.append(name, reflections, image);
-
-  if (bucketList.itinerary != "") {
-    const itinerarySection = document.createElement("section")
-    const itinData = bucketList.itinerary
-    // const numOfDays = itinData['length']
-    // const budget = itinData['budget']
-    // const activities = itinData['activity']
-    const description = itinData['description']
-
-    const heading = document.createElement("h4")
-    heading.textContent = "Your saved itinerary below"
-    const itinDescription = document.createElement("p")
+  const itinerarySection = document.createElement("section")
+  const description = bucketList.itinerary['description']
+  const heading = document.createElement("h3")
+  const itinDescription = document.createElement("p")
+  if (!description) {
+  } else {
+    heading.textContent = "The itinerary for this Bucket List Item:"
     itinDescription.innerHTML = description
     itinerarySection.append(heading, itinDescription)
-    image.insertAdjacentElement("afterend", itinerarySection)
   }
 
+  page.innerHTML = "";
+  page.append(name, reflections, image, itinerarySection);
+  
   console.log("page is working!");
   return page;
 }
