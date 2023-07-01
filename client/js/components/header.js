@@ -20,9 +20,10 @@ function setHeaderHtml() {
 <nav class="navbar navbar-expand-lg border-bottom border-bottom-dark">
 <ul id="navlist" class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item navbar-text" onClick="renderHomePage()">Home</li>
-<li class="nav-item navbar-text" onClick="howTo()">How To</li>
-<li class="nav-item navbar-text d-none" id="bucket-list" onClIck="renderBucketList(email)">Bucket List</li>
+<li class="nav-item navbar-text" onClick="howTo()">| How To</li>
+<li class="nav-item navbar-text d-none" id="bucket-list" onClIck="renderBucketList(email)">| Bucket List</li>
 <li class="nav-item navbar-text d-none" id="add-bucket-list" onClick="addBucketListForm(email)">Add Bucket List Item</li>
+<li class="nav-item navbar-text d-none" id="explore" onClick="renderExplore(email)">Explore</li>
 </ul>
 <ul id="navlist" class="navbar-nav mb-lg-0">
 <li class="nav-item navbar-text" id="signup" onClick="renderSignUpForm()">Sign Up</li>
@@ -38,6 +39,7 @@ function setLoggedOutHeader(){
   let addBucketList = document.getElementById("add-bucket-list")
   let bucketList = document.getElementById("bucket-list")
 
+  let explore = document.getElementById("explore")
   let loginOpt = document.getElementById("login")
   let signupOpt = document.getElementById("signup")
   let logoutOpt = document.getElementById("logout")
@@ -46,6 +48,7 @@ function setLoggedOutHeader(){
   logoutOpt.classList.add("d-none")
   addBucketList.classList.add("d-none")
   bucketList.classList.add("d-none")   
+  explore.classList.add("d-none")   
 
   // only showing these if you're not logged in
   loginOpt.classList.remove("d-none")
@@ -55,6 +58,7 @@ function setLoggedOutHeader(){
 function setLoggedInHeader(){
   let addBucketList = document.getElementById("add-bucket-list")
   let bucketList = document.getElementById("bucket-list")
+  let explore = document.getElementById("explore")
   let loginOpt = document.getElementById("login")
   let signupOpt = document.getElementById("signup")
   let logoutOpt = document.getElementById("logout")
@@ -67,5 +71,6 @@ function setLoggedInHeader(){
   logoutOpt.classList.remove("d-none")
   addBucketList.classList.remove("d-none")
   bucketList.classList.remove("d-none")
+  explore.classList.remove("d-none")
 
 }
