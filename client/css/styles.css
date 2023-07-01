@@ -9,7 +9,6 @@ body{
 
 h1{
   text-align: center;
-
 }
 
 img {
@@ -35,6 +34,10 @@ img {
 .navbar-text:hover {
   color: #013944;
   cursor: default;
+}
+
+.border-bottom{
+  margin-bottom: 10px;
 }
 
 .home-page-div{

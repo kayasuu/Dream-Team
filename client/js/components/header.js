@@ -15,15 +15,15 @@ function passback(newEmail, newName) {
 function setHeaderHtml() {
   const header = document.getElementById("header-nav");
   header.innerHTML = `
-<h1> BucketList.AI </h1>
+<h1 class="mb-0"> BucketList.AI </h1>
 <div class="container">
-<nav class="navbar navbar-expand-lg border-bottom border-bottom-dark">
+<nav class="navbar navbar-expand-lg border-bottom">
 <ul id="navlist" class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item navbar-text" onClick="renderHomePage()">Home</li>
 <li class="nav-item navbar-text" onClick="howTo()">| How To</li>
 <li class="nav-item navbar-text d-none" id="bucket-list" onClIck="renderBucketList(email)">| Bucket List</li>
+<li class="nav-item navbar-text d-none" id="explore" onClick="renderExplore(email)">| Explore</li>
 <li class="nav-item navbar-text d-none" id="add-bucket-list" onClick="addBucketListForm(email)">Add Bucket List Item</li>
-<li class="nav-item navbar-text d-none" id="explore" onClick="renderExplore(email)">Explore</li>
 </ul>
 <ul id="navlist" class="navbar-nav mb-lg-0">
 <li class="nav-item navbar-text" id="signup" onClick="renderSignUpForm()">Sign Up</li>
