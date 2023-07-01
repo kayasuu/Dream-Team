@@ -8,11 +8,8 @@ function renderExplore(email, username) {
     const userItems = []
     response.data.forEach((item) => {
         if (item["createdBy"] !== email) {
-          console.log("success")
           userItems.push(item)
         }
-        console.log(`${item["createdBy"]} -- ${email}`)
-        console.log(item["createdBy"] != email)
       })
     const listElements = userItems.map((bucketList) => 
       renderExploreList(bucketList)
