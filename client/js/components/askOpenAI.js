@@ -1,5 +1,3 @@
-// code should work goddamnit
-
 function renderExploreForm(bucketList){
   const page = document.getElementById("page");
   const h2 = document.createElement("h2");
@@ -91,7 +89,7 @@ function renderExploreForm(bucketList){
     };
 
     //GPT post items from form
-    const prompt = `I want to go to ${bucketList.name} for ${data.days} days. I have a budget of ${data.budget} and these are the activities I want to do: ${data.activity}.`;
+    const prompt = `I want to go to ${bucketList.name} for ${data.days} days. I want the cost to be ${data.budget} and these are the activities I want to do: ${data.activity}.`;
    console.log(prompt)
     const systemPrompt = `
     You are an AI trained to provide top-tier travel expertise of a professional travel agent. 
@@ -181,9 +179,9 @@ function renderExploreForm(bucketList){
       saveButton.className = "btn-outline-dark btn";
       saveButton.addEventListener('click', () => {
         const itinData = { "itinerary.description" : document.querySelector(".itineraryDiv").innerHTML };
-        axios.patch(`/api/bucket/${bucketList._id}`, itinData).then((_) => {
+        axios.patch(`/api/bucket/${bucketList._id}`, itinData).then((response) => {
           console.log("Itin added")
-          renderBucketPage(bucketList);
+          renderBucketPage(response.data);
         });
       })
 

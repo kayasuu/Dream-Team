@@ -166,7 +166,9 @@ router.patch("/:id", (request, response) => {
     const filter = { _id: new ObjectId(request.params.id) };
     const update = { $set: request.body };
     bucketCollection.updateOne(filter, update).then((_) => {
-        response.json();
+        bucketCollection.findOne(filter).then((resp) => 
+        response.json(resp)
+        );
     });
 });
 
