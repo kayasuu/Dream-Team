@@ -11,7 +11,7 @@ A user can login and pick destinations, choose from a list of potential activiti
 
 Using AI technology can be really confusing to some, and hopefully with how our app displays and saves info, it'll make the process more exciting for potential users.
 
-## Highlights from each of us:
+## Reflections from each of us:
 ### Su:
 
 ### Robert:
@@ -28,3 +28,6 @@ Hopefully *(turns out, yes)*
 
 ## Is it going to be useful?!
 Most definitely!
+
+## Future Features:
+Using Stripe API to make users pay so we can generate AI images. If they want more than 5 bucket list items it'll incur a fee.
