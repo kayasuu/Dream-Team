@@ -26,7 +26,7 @@ function addBucketListForm(email, username) {
         itinerary: {},
         createdBy: email
       };
-      axios.get(`https://api.unsplash.com/search/photos?query=${data.name}&client_id=TBALEKkzPYCBQoYCWtt2avUIHsybpzoz4Nkoi-Gvz2Y`)
+      axios.get(`https://api.unsplash.com/search/photos?query=${data.name}&orientation=landscape&client_id=&client_id=TBALEKkzPYCBQoYCWtt2avUIHsybpzoz4Nkoi-Gvz2Y`)
       .then((response) => {
         // The first result's URL is used, you may want to add error checking
         const imageUrl = response.data.results[0].urls.small; 
