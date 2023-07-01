@@ -6,12 +6,8 @@ function addBucketListForm(email, username) {
   form.innerHTML = `
 <label for="name">Destination:</label>
 <input type="text" name="name">
-<label for="description">Description:</label>
-<input type="text" name="description">
-<label for="activity">Activity:</label>
-<input type="text" name="activity">
-<label for="image">Image url:</label>
-<input type="text" name="image">
+<label for="reflections">Reflections:</label>
+<input type="text" name="reflections">
 <input type="submit">
 `;
   page.replaceChildren(h2, form);
@@ -24,19 +20,41 @@ function addBucketListForm(email, username) {
         name: formData.get("name"),
         description: formData.get("description"),
         activity: formData.get("activity"),
-        image: formData.get("image"),
+        image: [],
         savedBy: [],
         likedBy: [],
         itinerary: {},
         createdBy: email
       };
-      console.log(data)
-      //prettier-ignore
-      axios.post("/api/bucket", data).then((_) => {
+      axios.get(`https://api.unsplash.com/search/photos?query=${data.name}&client_id=TBALEKkzPYCBQoYCWtt2avUIHsybpzoz4Nkoi-Gvz2Y`)
+      .then((response) => {
+        // The first result's URL is used, you may want to add error checking
+        const imageUrl = response.data.results[0].urls.small; 
+  
+        const img = document.createElement("img");
+        img.src = imageUrl;
+        img.alt = `Image of ${data.name}`;
+  
+        // Update data.image with the image URL
+        data.image.push(imageUrl);
+  
+        console.log("Pic generated");
+  
+        // Now send the POST request to /api/bucket
+        axios.post("/api/bucket", data).then((_) => {
           console.log("Bucketlist Item added")
-      renderBucketList();
-    }).catch((error)=>{
-      console.log(error)
-    });
+          renderBucketList(email);
+        }).catch((error)=>{
+          console.log(error)
+        });
+  
+      })
+      .catch((error) => {
+        console.error("Error generating pic: ", error);
+      });
+
+
+      console.log(data)
+
   })
 }

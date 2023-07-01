@@ -27,13 +27,9 @@ function renderList(bucketList) {
   const name = document.createElement("h2");
   name.textContent = bucketList.name;
 
-  const description = document.createElement("p");
-  description.textContent = bucketList.description;
-  description.classList.add("mb-1");
-
-  const activity = document.createElement("p");
-  activity.textContent = bucketList.activity;
-  activity.classList.add("mb-1");
+  const reflections = document.createElement("p");
+  reflections.textContent = bucketList.reflections;
+  reflections.classList.add("mb-1");
 
   const image = document.createElement("img");
   image.src = bucketList.image;
@@ -42,7 +38,7 @@ function renderList(bucketList) {
     renderBucketPage(bucketList);
   })
 
-  div.append(name, description, activity, image);
+  div.append(name, reflections, image);
   console.log("bucketlist is working!");
   console.log(div)
   return div;
@@ -55,13 +51,10 @@ function renderList(bucketList) {
   const name = document.createElement("h2");
   name.textContent = bucketList.name;
 
-  const description = document.createElement("p");
-  description.textContent = bucketList.description;
-  description.classList.add("mb-1");
+  const reflections = document.createElement("p");
+  reflections.textContent = bucketList.description;
+  reflections.classList.add("mb-1");
 
-  const activity = document.createElement("p");
-  activity.textContent = bucketList.activity;
-  activity.classList.add("mb-1");
 
   const image = document.createElement("img");
   image.src = bucketList.image;
@@ -98,7 +91,7 @@ function renderList(bucketList) {
   btnDiv.append(editButton, deleteButton, exploreButton)
 
   page.innerHTML = "";
-  page.append(name, description, activity, image, btnDiv);
+  page.append(name, reflections, image, btnDiv);
 
   if (bucketList.itinerary != "") {
     const itinerarySection = document.createElement("section")
@@ -125,12 +118,8 @@ function renderEditForm(bucketList){
   form.innerHTML = `
   <label for="name">Name</label>
   <input type="text" name="name" value="${bucketList.name}">
-  <label for="description">Description</label>
-  <input type="text" name="description" value="${bucketList.description}">
-  <label for="activity">Activity</label>
-  <input type="text" name="activity" value="${bucketList.activity}">
-  <label for="image">Image</label>
-  <input type="text" name="image" value="${bucketList.image}">
+  <label for="reflections">Reflections</label>
+  <input type="text" name="reflections" value="${bucketList.reflections}">
   <input type="submit">
   `;
   form.addEventListener("submit", (event)=>{
@@ -139,9 +128,7 @@ function renderEditForm(bucketList){
 
   const data = {
     name: formData.get("name"),
-    description: formData.get("description"),
-    activity: formData.get("activity"),
-    image: formData.get("image"),
+    reflections: formData.get("reflections"),
   };
 
   axios.put(`/api/bucket/${bucketList._id}`, data).then((_)=>{
