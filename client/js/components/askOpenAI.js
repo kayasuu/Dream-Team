@@ -53,7 +53,7 @@ function renderExploreForm(bucketList){
 <input type="checkbox" name="activities" value="Cycling"> Going on cycling or biking tours<br>
 <input type="checkbox" name="activities" value="NationalParks"> Exploring national parks and hiking trails<br>
 <br>
-<input type="submit">
+<input type="submit" class="btn btn-outline-dark">
 `;
 //clarify drop down menu
 //budget
@@ -64,6 +64,10 @@ function renderExploreForm(bucketList){
 
   form.addEventListener("submit", (event) => {
     
+    const paragraph = document.createElement("p");
+    paragraph.textContent = "Loading! Please be patience while BucketList.AI builds your itinerary 👷‍♂️ 🔨 🧰 🤖  "; // Aiming to update this later to something more creative
+    page.appendChild(paragraph);
+
     event.preventDefault();
     const formData = new FormData(form);
 
