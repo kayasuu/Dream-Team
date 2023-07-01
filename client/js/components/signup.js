@@ -31,6 +31,7 @@ axios.post("/api/users", data)
 .then((_) => {
     renderLoginForm();
 }).catch((error) => {     
+    console.log(error)
     errorMsg.classList = "alert alert-danger"       
     errorMsg.textContent = error.response.data.message;
 });
