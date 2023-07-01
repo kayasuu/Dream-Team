@@ -20,8 +20,8 @@ function setHeaderHtml() {
 <nav class="navbar navbar-expand-lg border-bottom border-bottom-dark">
 <ul id="navlist" class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item navbar-text" onClick="renderHomePage()">Home</li>
-<li class="nav-item navbar-text" onClick="howTo()">How To</li>
-<li class="nav-item navbar-text d-none" id="bucket-list" onClIck="renderBucketList(email)">Bucket List</li>
+<li class="nav-item navbar-text" onClick="howTo()">| How To</li>
+<li class="nav-item navbar-text d-none" id="bucket-list" onClIck="renderBucketList(email)">| Bucket List</li>
 <li class="nav-item navbar-text d-none" id="add-bucket-list" onClick="addBucketListForm(email)">Add Bucket List Item</li>
 </ul>
 <ul id="navlist" class="navbar-nav mb-lg-0">

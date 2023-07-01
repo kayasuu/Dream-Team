@@ -4,11 +4,11 @@ function addBucketListForm(email, username) {
   h2.textContent = "Add to your Bucketlist";
   const form = document.createElement("form");
   form.innerHTML = `
-<label for="name">Destination:</label>
-<input type="text" name="name">
-<label for="reflections">Reflections:</label>
-<input type="text" name="reflections">
-<input type="submit">
+<label for="name" class="form-label mb-0">Destination:</label>
+<input type="text" name="name" class="form-control">
+<label for="reflections" class="form-label mb-0">Reflections:</label>
+<input type="text" name="reflections" class="form-control reflections mb-1" placeholder="reflection text">
+<input type="submit" class="btn btn-outline-dark">
 `;
   page.replaceChildren(h2, form);
   form.addEventListener("submit", (event) => {

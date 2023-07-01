@@ -17,8 +17,8 @@ img {
 }
 
 .centre{
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
   text-align: center;
 }
 
@@ -77,6 +77,15 @@ margin: 5px;
   height: 30%;
 }
 
+.reflections{
+  width: 700px;
+}
+
 #name-form{
   width: 200px;
+}
+
+#add-bucket-list{
+font-style: italic;
+font-weight: 200;
 }
