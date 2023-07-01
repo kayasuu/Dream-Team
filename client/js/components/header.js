@@ -37,7 +37,6 @@ function setHeaderHtml() {
 function setLoggedOutHeader(){  
   let addBucketList = document.getElementById("add-bucket-list")
   let bucketList = document.getElementById("bucket-list")
-  let chatGPT = document.getElementById("chatGPT")
 
   let loginOpt = document.getElementById("login")
   let signupOpt = document.getElementById("signup")
@@ -46,8 +45,7 @@ function setLoggedOutHeader(){
   // hiding these 3 if you're not logged in
   logoutOpt.classList.add("d-none")
   addBucketList.classList.add("d-none")
-  bucketList.classList.add("d-none")  
-  chatGPT.classList.add("d-none")  
+  bucketList.classList.add("d-none")   
 
   // only showing these if you're not logged in
   loginOpt.classList.remove("d-none")
@@ -57,7 +55,6 @@ function setLoggedOutHeader(){
 function setLoggedInHeader(){
   let addBucketList = document.getElementById("add-bucket-list")
   let bucketList = document.getElementById("bucket-list")
-  let chatGPT = document.getElementById("chatGPT")
   let loginOpt = document.getElementById("login")
   let signupOpt = document.getElementById("signup")
   let logoutOpt = document.getElementById("logout")
@@ -70,6 +67,5 @@ function setLoggedInHeader(){
   logoutOpt.classList.remove("d-none")
   addBucketList.classList.remove("d-none")
   bucketList.classList.remove("d-none")
-  chatGPT.classList.remove("d-none")  
 
 }
