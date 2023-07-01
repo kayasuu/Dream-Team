@@ -29,6 +29,8 @@ const sessionsController = require("./controllers/sessionsController.js")
 app.use("/api/session", sessionsController);
 const aiController = require("./controllers/aiController.js")
 app.use("/api/gpt", aiController);
+const unsplashController = require("./controllers/unsplashController.js")
+app.use("/api/unsplash", unsplashController);
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`)
