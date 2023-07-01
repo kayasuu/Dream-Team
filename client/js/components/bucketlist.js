@@ -3,15 +3,22 @@ function renderBucketList(email, username) {
   const paragraph = document.createElement("p");
   paragraph.textContent = "Loading..."; // Aiming to update this later to something more creative
   page.replaceChildren(paragraph);
-  console.log(email, username)
+  
   axios.get("/api/bucket").then((response) => {
-    const listElements = response.data.map((bucketList) =>
+    const userItems = []
+    response.data.forEach((item) => {
+        if (item["createdBy"] == email) {
+          userItems.push(item)
+        }
+      })
+      console.log(userItems)
+    const listElements = userItems.map((bucketList) => 
       renderList(bucketList)
     );
+    console.log(listElements)
     page.replaceChildren(...listElements);
-  });
+});
 }
-
 
 function renderList(bucketList) {
   const div = document.createElement("div");
@@ -37,8 +44,9 @@ function renderList(bucketList) {
 
   div.append(name, description, activity, image);
   console.log("bucketlist is working!");
+  console.log(div)
   return div;
- }
+}
 
 //added another page for buttons etc
  function renderBucketPage(bucketList){
@@ -57,8 +65,6 @@ function renderList(bucketList) {
 
   const image = document.createElement("img");
   image.src = bucketList.image;
-
-
 
   const deleteButton =  document.createElement("button");
   deleteButton.textContent = "Delete";
@@ -114,9 +120,7 @@ function renderList(bucketList) {
   return page;
 }
 
-
-
- function renderEditForm(bucketList){
+function renderEditForm(bucketList){
   const form = document.createElement("form")
   form.innerHTML = `
   <label for="name">Name</label>
@@ -129,24 +133,24 @@ function renderList(bucketList) {
   <input type="text" name="image" value="${bucketList.image}">
   <input type="submit">
   `;
-form.addEventListener("submit", (event)=>{
-event.preventDefault()
-const formData = new FormData(form);
+  form.addEventListener("submit", (event)=>{
+  event.preventDefault()
+  const formData = new FormData(form);
 
-const data = {
-  name: formData.get("name"),
-  description: formData.get("description"),
-  activity: formData.get("activity"),
-  image: formData.get("image"),
+  const data = {
+    name: formData.get("name"),
+    description: formData.get("description"),
+    activity: formData.get("activity"),
+    image: formData.get("image"),
+  };
+
+  axios.put(`/api/bucket/${bucketList._id}`, data).then((_)=>{
+    renderBucketList()
+  }).catch((error)=>{
+    console.log(error)
+  })
+  })
+  const page = document.getElementById("page")
+  page.replaceChildren(form)
 };
-
-axios.put(`/api/bucket/${bucketList._id}`, data).then((_)=>{
-  renderBucketList()
-}).catch((error)=>{
-  console.log(error)
-})
-})
-const page = document.getElementById("page")
-page.replaceChildren(form)
- };
 
