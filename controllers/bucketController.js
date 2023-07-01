@@ -58,7 +58,7 @@ mongoClient.connect().then(_ => {
                     image: "https://i.natgeofe.com/k/6d4021bf-832e-49f6-b898-27b7fcd7cbf7/eiffel-tower-ground-up.jpg?w=636&h=424", 
                     activity: "City Experience",
                     itinerary: {},
-                    savedBy: [],
+                    savedBy: ["user1@email.com"],
                     likedBy: [],
                     createdBy: "user2@email.com"
                 },
@@ -68,7 +68,7 @@ mongoClient.connect().then(_ => {
                     image: "https://th-thumbnailer.cdn-si-edu.com/RqxjpcWzxMdN17OWtqJJsGjxDBE=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/12/d0/12d08a47-a37c-4df8-a448-95fba1dd6c15/louvre.jpg", 
                     activity: "City Experience",
                     itinerary: {},
-                    savedBy: [],
+                    savedBy: ["user1@email.com"],
                     likedBy: [],
                     createdBy: "user2@email.com"
                 },
@@ -78,7 +78,7 @@ mongoClient.connect().then(_ => {
                     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Arc_de_Triomphe%2C_Paris_21_October_2010.jpg/1920px-Arc_de_Triomphe%2C_Paris_21_October_2010.jpg", 
                     activity: "City Experience",
                     itinerary: {},
-                    savedBy: [],
+                    savedBy: ["user1@email.com"],
                     likedBy: [],
                     createdBy: "user2@email.com"
                 },
