@@ -25,6 +25,7 @@ img {
   margin: auto;
   width: 80%
 }
+
 .navbar-text:hover {
   color: #212529;
   cursor: default;
@@ -41,8 +42,8 @@ img {
   padding: 10px;
   text-align: center;
   border: 1px solid black;
-  width: 450px;
-  height: 350px;
+  width: 500px;
+  height: 400px;
 }
 
 .btn{

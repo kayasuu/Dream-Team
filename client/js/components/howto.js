@@ -29,7 +29,18 @@ function howTo(){
     Below is an example of how you can use our app to create new bucket list items & get some help planning an
     itinerary.
 </p>
-<div><h3>Example</h3></div>
+<br/>
+<div class="home-page-div">
+<h2>Machu Pichu</h2>
+<p>Machu Picchu beckons with its awe-inspiring ruins and stunning mountain vistas, promising an unforgettable adventure that immerses you in the ancient Inca civilization's intriguing history and captivating beauty.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Machu_Picchu%2C_Peru.jpg"></img>
+<div class="btn-div">
+<button class="btn-outline-dark btn">Delete</button>
+<button class="btn-outline-dark btn">Edit</button>
+<button class="btn-outline-dark btn">Plan Itinerary</button>
+</div>
+</div>
+<br/>
 <h4>Explore</h4>
 <p class="display-p mb-1">
     Explore is a shared feed where things get exciting and you can start seeing other peoples itineraries. Feel free to
