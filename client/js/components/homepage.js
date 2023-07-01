@@ -2,9 +2,9 @@ function renderHomePage(){
     const page = document.getElementById("page");
     page.innerHTML = `
     <div class="centre">
-    <h2>Welcome to Bucket List</h2>
+    <h2>Welcome to BucketList.AI</h2>
     <p class="display-p">
-    Welcome to Bucket List, a place to log, explore and build your bucket list and reflect back on your journeys. Let us help you bring your bucket list to life!
+    Welcome to BucketList.AI, a place to log, explore and build your bucket list and reflect back on your journeys. Let us help you bring your bucket list to life!
     Our platform makes it effortless to map out, explore ideas and visualise your travel goals.
     <br/>    <br/>
     Explore the world with ease using our AI assistant, we can it BucketList.AI! Generate personalised itineraries based on your destination, number of days, preferred activities and budget. Whether it's a weekend getaway or a month-long adventure, 

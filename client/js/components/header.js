@@ -15,7 +15,7 @@ function passback(newEmail, newName) {
 function setHeaderHtml() {
   const header = document.getElementById("header-nav");
   header.innerHTML = `
-<h1> Bucket List </h1>
+<h1> BucketList.AI </h1>
 <div class="container">
 <nav class="navbar navbar-expand-lg border-bottom border-bottom-dark">
 <ul id="navlist" class="navbar-nav me-auto mb-2 mb-lg-0">

@@ -1,4 +1,4 @@
-# BUCKETLIST
+# BUCKETLIST.AI
 ## By the dream team:
 ### Su Kayali, Robert Lam, James Preston & Galit Moss
 
