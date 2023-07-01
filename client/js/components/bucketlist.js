@@ -32,7 +32,7 @@ function renderList(bucketList) {
   const image = document.createElement("img");
   image.src = bucketList.image;
 
-  div.addEventListener("click", () => {
+  image.addEventListener("click", () => {
     renderBucketPage(bucketList);
   })
 
