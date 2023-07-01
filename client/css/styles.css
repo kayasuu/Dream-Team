@@ -1,5 +1,8 @@
 * {
   margin: 4px;
+  margin-left: 30px;
+  margin-right: 30px;
+  text-align: center;
 }
 
 body{
@@ -14,6 +17,7 @@ img {
   width: 40%;
   height: 40%;
 }
+
 
 .navbar{
   margin: auto;
