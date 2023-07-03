@@ -1,5 +1,6 @@
 function renderExploreForm(bucketList){
   const page = document.getElementById("page");
+  page.classList.add('centre')
   const h2 = document.createElement("h2");
   h2.textContent = `Let's explore ${bucketList.name}!`;
   const form = document.createElement("form");
@@ -22,7 +23,7 @@ function renderExploreForm(bucketList){
   <option value="12">12</option>
 </select>
 <br>
-<label for="activities">How much do you want to spend on this trip?:</label>
+<label for="budget">How much do you want to spend on this trip?:</label>
 <br>
 <select name="budget">
   <option value="" disabled selected></option>
@@ -32,51 +33,73 @@ function renderExploreForm(bucketList){
 </select>
 <br>
 <label for="activities">Things I want to do:</label><br>
-<input type="checkbox" name="activities" value="Sightseeing"> Sightseeing and exploring popular landmarks<br>
-<input type="checkbox" name="activities" value="Museums"> Visiting museums and art galleries<br>
-<input type="checkbox" name="activities" value="LocalCuisine"> Trying local cuisine and dining at popular restaurants<br>
-<input type="checkbox" name="activities" value="Shopping"> Shopping at local markets and malls<br>
-<input type="checkbox" name="activities" value="CityTours"> Going on guided city tours<br>
-<input type="checkbox" name="activities" value="ScenicWalks"> Taking scenic walks or hikes<br>
-<input type="checkbox" name="activities" value="Beach"> Relaxing on beaches or by the pool<br>
-<input type="checkbox" name="activities" value="WaterSports"> Participating in water sports like snorkeling or surfing<br>
-<input type="checkbox" name="activities" value="HistoricalSites"> Exploring historical sites and ruins<br>
-<input type="checkbox" name="activities" value="CulturalEvents"> Attending cultural festivals and events<br>
-<input type="checkbox" name="activities" value="WildlifeSafari"> Going on wildlife safaris or nature tours<br>
-<input type="checkbox" name="activities" value="BoatCruise"> Taking boat or river cruises<br>
-<input type="checkbox" name="activities" value="AdventureActivities"> Trying adventure activities like zip-lining or bungee jumping<br>
-<input type="checkbox" name="activities" value="LiveMusic"> Enjoying live music performances or theater shows<br>
-<input type="checkbox" name="activities" value="WineTours"> Going on wine or brewery tours<br>
-<input type="checkbox" name="activities" value="CookingClasses"> Taking cooking classes or food tours<br>
-<input type="checkbox" name="activities" value="ArtsCrafts"> Engaging in local arts and crafts workshops<br>
-<input type="checkbox" name="activities" value="ReligiousSites"> Visiting religious or spiritual sites<br>
-<input type="checkbox" name="activities" value="Cycling"> Going on cycling or biking tours<br>
-<input type="checkbox" name="activities" value="NationalParks"> Exploring national parks and hiking trails<br>
+<div class="row justify-content-center">
+    <div class="col-lg-6 col-md-12 activity-div text-center" id="localCulture">
+    <img src="https://images.unsplash.com/photo-1493780474015-ba834fd0ce2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1684&q=80" alt="Local Culture">
+    <p>Explore local culture</p>
+  </div>
+  <div class="col-lg-6 col-md-12 activity-div text-center" id="nature">
+    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=874&q=80" alt="Nature">
+    <p>Wander in nature</p>
+  </div>
+  <div class="col-lg-6 col-md-12 activity-div text-center" id="cityLife">
+    <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80" alt="City Life">
+    <p>Enjoy city life</p>
+  </div>
+  <div class="col-lg-6 col-md-12 activity-div text-center" id="quietMoments">
+    <img src="https://images.unsplash.com/flagged/photo-1569744068983-6dfc2f27deb8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80" alt="Quiet Moments">
+    <p>Seek quiet moments</p>
+  </div>
+  <div class="col-lg-6 col-md-12 activity-div text-center" id="localFoods">
+    <img src="https://images.unsplash.com/photo-1545984929-f28d9e323a00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1006&q=80" alt="Local Foods">
+    <p>Taste local foods</p>
+  </div>
+  <div class="col-lg-6 col-md-12 activity-div text-center" id="touristLandmarks">
+  <img src="https://images.unsplash.com/photo-1646518540529-51da7a19c1ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Tourist Landmarks">
+  <p>Visit tourist landmarks</p>
+</div>
+<div class="col-lg-6 col-md-12 activity-div text-center" id="hiddenGems">
+  <img src="https://images.unsplash.com/photo-1674311667887-05784577c91f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Hidden Gems">
+  <p>Find hidden gems</p>
+</div>
+<div class="col-lg-6 col-md-12 activity-div text-center" id="locals">
+  <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29tbXVuaXRpZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1000&q=60" alt="Outdoor Sports">
+  <p>Meet new people</p>
+</div>
+<div class="col-lg-6 col-md-12 activity-div text-center" id="nightlife">
+  <img src="https://images.unsplash.com/photo-1545128485-c400e7702796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Nightlife">
+  <p>Experience nightlife</p>
+  </div>
+</div>
 <br>
 <input type="submit" class="btn btn-outline-dark">
 `;
-//clarify drop down menu
-//budget
-//input type: checkbox
-//explore itineraries by type: for activities. 
-//
+
+
   page.replaceChildren(h2, form);
+
+  const activityImgs = document.querySelectorAll(".activity-div img");
+  activityImgs.forEach((img) => {
+    img.addEventListener('click', (event) => {
+      event.target.parentNode.classList.toggle('selected');
+    });
+  });
 
   form.addEventListener("submit", (event) => {
     
     const paragraph = document.createElement("p");
-    paragraph.textContent = "Loading! Please be patience while BucketList.AI builds your itinerary 👷‍♂️ 🔨 🧰 🤖  "; // Aiming to update this later to something more creative
+    paragraph.textContent = "Loading! Please be patient while BucketList.AI builds your itinerary 👷‍♂️ 🔨 🧰 🤖  "; // Aiming to update this later to something more creative
     page.appendChild(paragraph);
 
     event.preventDefault();
     const formData = new FormData(form);
 
     const activities = []
-    for(let data of formData.entries()){
-      if (data[0] === 'activities') {
-        activities.push(data[1])
-      }
+    const selectedDivs = document.querySelectorAll(".activity-div.selected");
+    for(let div of selectedDivs){
+      activities.push(div.textContent)
     }
+
     let activitiesString = ""
     for (i = 0; i < activities.length; i++) {
       if (i < activities.length-1) {
@@ -89,7 +112,7 @@ function renderExploreForm(bucketList){
     const data = {
       days: formData.get("days"),
       budget: formData.get("budget"),
-      activity: activitiesString
+      activity: activities
     };
 
     //GPT post items from form
@@ -97,9 +120,11 @@ function renderExploreForm(bucketList){
    console.log(prompt)
     const systemPrompt = `
     You are an AI trained to provide top-tier travel expertise of a professional travel agent. 
-    Your mission is to reflect on user input and come up with an itinerary for their trip. Split this itinerary up by morning, afternoon, evening.
+    Your mission is to reflect on user input and come up with a DETAILED itinerary for their trip, PRIMARILY DESIGNED BASED ON USER ACTIVITIES. Include references to cities, towns and significant icons where possible.
+    Split this itinerary up by morning, afternoon, evening.
     Write an itinerary for each day, based on input below and do NOT ask a question. Do NOT use filler words before or after the response.
     Make sure every new line start with either the day, or "Morning:" "Evening:" or "Afternoon:". Make sure the day, time of day and activities are all on new lines.
+    Do NOT use "-" in answer.
     `;
   
     const patchData = {
@@ -156,16 +181,22 @@ function renderExploreForm(bucketList){
         }
     
         // Set the text content of the element
+
         element.textContent = line;
     
         // Append the element to the itineraryDiv
         itineraryDiv.append(element);
       });
     
-      // Get the page and replace all its children with the itineraryDiv
+      // get the page and replace all its children with the itineraryDiv
       const page = document.getElementById("page");
       const h2 = document.createElement("h2");
       h2.textContent = `Your ${bucketList.name} itinerary!`;
+
+      //place pic here:
+      const image = document.createElement("img");
+      image.src = bucketList.image;
+
 
       const backButton = document.createElement('button');
         backButton.textContent = `Back to ${bucketList.name}`;
@@ -189,7 +220,7 @@ function renderExploreForm(bucketList){
         });
       })
 
-      page.replaceChildren(h2, itineraryDiv, backButton, saveButton);
+      page.replaceChildren(h2, image, itineraryDiv, backButton, saveButton);
     }   
     
     };

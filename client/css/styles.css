@@ -4,16 +4,29 @@
 }
 
 body{
-  background-color: #bbc9cf;
+  background-color: #92d0ea26;
 }
 
-h1{
+h1, h2{
   text-align: center;
+  padding: 20px;
+ 
+}
+
+h1 {
+  font-family: 'Ysabeau SC', sans-serif;
+}
+h2, h3{
+  font-family: 'Ysabeau Office', sans-serif;
+}
+p {
+  font-family: 'Ysabeau Infant', sans-serif;
+  font-size: 18px;
 }
 
 img {
-  width: 40%;
-  height: 40%;
+  width: 60%;
+  height: 60%;
 }
 
 footer{
@@ -21,7 +34,7 @@ footer{
   margin-top: 50px;
 }
 
-.centre{
+.centre, footer, form{
   margin-left: 100px;
   margin-right: 100px;
   text-align: center;
@@ -50,8 +63,13 @@ footer{
   padding: 10px;
   text-align: center;
   width: 500px;
-  height: 400px;
+  height: 500px;
   border: 1px solid #15515e;
+
+}
+.home-page-div img {
+  width: 40%;
+  height:40%;
 }
 
 .btn{
@@ -99,11 +117,63 @@ border-color:#013944;
   width: 700px;
 }
 
-#name-form{
-  width: 200px;
-}
 
 #add-bucket-list{
 font-style: italic;
 font-weight: 200;
+}
+
+#howto >p,
+#homepage >p,
+.itineraryDiv >p,
+.btn-div{
+  padding: 10px;
+}
+
+.itineraryDiv{
+  margin: 20px;
+}
+.activity-div {
+  width: 300px; 
+  height: 300px; 
+  position: relative; 
+  overflow: hidden; 
+  text-align: center; 
+  margin: 10px;
+}
+
+.activity-div img {
+  width: 90%; /* reduce to create padding effect */
+  height: 80%; /* reduce to make space for the text */
+  object-fit: cover;
+  margin: 5%; 
+}
+
+.activity-div p {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 15px 15px 15px 15px;
+  margin: 10px 5px 5px 5px;
+  font-size: 24px;
+}
+
+.activity-div.selected {
+  background-color: #015c6e;
+  color: #fff;
+}
+.activity-div.selected p {
+  color: #fff;
+}
+
+.container-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container-div > div {
+  flex: 0 0 48%;
+  box-sizing: border-box;
 }

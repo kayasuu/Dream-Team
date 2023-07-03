@@ -1,5 +1,6 @@
 function renderExplore(email, username) {
   const page = document.getElementById("page");
+  page.classList.add('centre');
   const paragraph = document.createElement("p");
   paragraph.textContent = "Loading..."; // Aiming to update this later to something more creative
   page.replaceChildren(paragraph);
@@ -14,7 +15,11 @@ function renderExplore(email, username) {
     const listElements = userItems.map((bucketList) => 
       renderExploreList(bucketList)
     );
-    page.replaceChildren(...listElements);
+    const containerDiv = document.createElement('div');
+    containerDiv.classList.add('container-div');
+    containerDiv.append(...listElements);
+    
+    page.replaceChildren(containerDiv);
 });
 }
 
@@ -44,6 +49,7 @@ function renderExploreList(bucketList) {
 //added another page for buttons etc
  function renderBucketPageExplore(bucketList){
   const page = document.getElementById("page");
+  page.classList.add('centre');
 
   const name = document.createElement("h2");
   name.textContent = bucketList.name;
@@ -56,6 +62,7 @@ function renderExploreList(bucketList) {
   image.src = bucketList.image;
 
   const itinerarySection = document.createElement("section")
+  itinerarySection.classList.add("itineraryDiv")
   const description = bucketList.itinerary['description']
   const heading = document.createElement("h3")
   const itinDescription = document.createElement("p")

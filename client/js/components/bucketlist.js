@@ -1,5 +1,6 @@
 function renderBucketList(email, username) {
   const page = document.getElementById("page");
+  page.classList.add('centre')
   const paragraph = document.createElement("p");
   paragraph.textContent = "Loading..."; // Aiming to update this later to something more creative
   page.replaceChildren(paragraph);
@@ -14,7 +15,11 @@ function renderBucketList(email, username) {
     const listElements = userItems.map((bucketList) => 
       renderList(bucketList)
     );
-    page.replaceChildren(...listElements);
+    const containerDiv = document.createElement('div');
+    containerDiv.classList.add('container-div');
+    containerDiv.append(...listElements);
+    
+    page.replaceChildren(containerDiv);
 });
 }
 
@@ -41,15 +46,16 @@ function renderList(bucketList) {
   return div;
 }
 
-//added another page for buttons etc
+//added another page for the bucket list item itself, buttons etc
  function renderBucketPage(bucketList){
   const page = document.getElementById("page");
+  page.classList.add('centre')
 
   const name = document.createElement("h1");
   name.textContent = bucketList.name;
 
   const reflections = document.createElement("p");
-  reflections.textContent = bucketList.description;
+  reflections.textContent = bucketList.reflections;
   reflections.classList.add("mb-1");
 
   const image = document.createElement("img");
@@ -109,10 +115,10 @@ function renderList(bucketList) {
 function renderEditForm(bucketList){
   const form = document.createElement("form")
   form.innerHTML = `
-  <label for="name">Name</label>
-  <input type="text" name="name" value="${bucketList.name}">
-  <label for="reflections">Reflections</label>
-  <input type="text" name="reflections" value="${bucketList.reflections}">
+  <label for="name" class="form-label mb-0">Name</label>
+  <input type="text" name="name" class="form-control" value="${bucketList.name}">
+  <label for="reflections" class="form-label mb-0">Reflections</label>
+  <input type="text" class="form-control" name="reflections" value="${bucketList.reflections}">
   <input type="submit">
   `;
   form.addEventListener("submit", (event)=>{
@@ -131,6 +137,7 @@ function renderEditForm(bucketList){
   })
   })
   const page = document.getElementById("page")
+  page.classList.add('centre')
   page.replaceChildren(form)
 };
 

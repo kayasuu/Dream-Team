@@ -1,7 +1,13 @@
 function renderSignUpForm(){
 const page = document.getElementById("page")
+page.classList.add('centre')
 const h2 = document.createElement("h2")
 h2.textContent = "Sign Up"
+
+const container = document.createElement("div");
+container.classList.add("d-flex", "justify-content-center", "align-items-center");
+container.style.height = "40vh";  
+
 const form = document.createElement("form")
 form.innerHTML = `
 <label for="name" class="form-label mb-0 name-form">Name:</label>
@@ -10,12 +16,15 @@ form.innerHTML = `
 <input type="email" name="email" class="form-control">
 <label for="password" class="form-label mb-0">Password: </label>
 <input type="password" name="password" class="form-control">
+<br><br>
 <input type="submit" class="btn btn-outline-dark">
 `;
 
+container.appendChild(form);
+
 const errorMsg = document.createElement("p")
 errorMsg.id = "error-msg";
-page.replaceChildren(h2, form, errorMsg);
+page.replaceChildren(h2, container, errorMsg);
 
 form.addEventListener("submit", (event)=>{
 event.preventDefault()
