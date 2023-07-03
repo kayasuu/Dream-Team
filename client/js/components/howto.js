@@ -1,7 +1,8 @@
 function howTo(){
     const page = document.getElementById("page");
+    page.classList.add('centre');
     page.innerHTML = `
-    <div class="centre">
+    <div class="centre" id="howto">
     <h2>How To</h2>
 <h4 class="mb-1">Home</h4>
 <p>
@@ -37,7 +38,7 @@ function howTo(){
 <div class="btn-div">
 <button class="btn-outline-dark btn">Delete</button>
 <button class="btn-outline-dark btn">Edit</button>
-<button class="btn-outline-dark btn">Plan Itinerary</button>
+<button id="machuItin" class="btn-outline-dark btn">Plan Itinerary</button>
 </div>
 </div>
 <br/>
@@ -48,4 +49,5 @@ function howTo(){
 </p>
 </div>
     `
+
 }

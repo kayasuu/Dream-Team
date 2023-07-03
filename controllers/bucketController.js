@@ -19,7 +19,7 @@ mongoClient.connect().then(_ => {
             bucketCollection.insertMany([
                 {   // user1 bucket list items
                     name: "Machu Picchu", 
-                    description: "5th-century Inca citadel located in the Eastern Cordillera of southern Peru on a 2,430-meter (7,970 ft) mountain ridge", 
+                    reflections: "5th-century Inca citadel located in the Eastern Cordillera of southern Peru on a 2,430-meter (7,970 ft) mountain ridge", 
                     image: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Machu_Picchu%2C_Peru.jpg", 
                     activity: "Hike",
                     itinerary: {
@@ -34,7 +34,7 @@ mongoClient.connect().then(_ => {
                 },
                 {
                     name: "Vinicunca", 
-                    description: "The Rainbow Mountain or Vinicunca is a mountain near Cusco in Peru", 
+                    reflections: "The Rainbow Mountain or Vinicunca is a mountain near Cusco in Peru", 
                     image: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Rainbow_Mountain_Peru.jpg", 
                     activity: "Hike",
                     itinerary: {},

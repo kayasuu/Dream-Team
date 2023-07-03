@@ -1,7 +1,8 @@
 function renderHomePage(){
     const page = document.getElementById("page");
+    page.classList.add('centre')
     page.innerHTML = `
-    <div class="centre">
+    <div class="centre" id="homepage">
     <h2>Welcome to BucketList.AI</h2>
     <p class="display-p">
     Welcome to BucketList.AI, a place to log, explore and build your bucket list and reflect back on your journeys. Let us help you bring your bucket list to life!
