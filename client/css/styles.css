@@ -133,6 +133,10 @@ font-weight: 200;
 .itineraryDiv{
   margin: 20px;
 }
+.bucketimg img{
+  width: 40%;
+  height: 40%;
+}
 .activity-div {
   width: 300px; 
   height: 300px; 

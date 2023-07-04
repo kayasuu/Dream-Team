@@ -50,6 +50,7 @@ function renderList(bucketList) {
  function renderBucketPage(bucketList){
   const page = document.getElementById("page");
   page.classList.add('centre')
+  page.classList.add('bucketimg')
 
   const name = document.createElement("h1");
   name.textContent = bucketList.name;
@@ -62,6 +63,7 @@ function renderList(bucketList) {
   image.src = bucketList.image;
 
   const itinerarySection = document.createElement("section")
+  itinerarySection.classList.add('itinimg');
   const description = bucketList.itinerary['description']
   const heading = document.createElement("h3")
   const itinDescription = document.createElement("p")
@@ -93,7 +95,7 @@ function renderList(bucketList) {
   })
 
   const exploreButton = document.createElement('button');
-  exploreButton.textContent = 'Plan Itinerary';
+  exploreButton.textContent = 'Generate an AI Itinerary!';
   exploreButton.className = "btn-outline-dark btn";
 
   exploreButton.addEventListener('click', () => {
