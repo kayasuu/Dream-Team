@@ -2,7 +2,7 @@
 ## By the dream team:
 ### Su Kayali, Robert Lam, James Preston & Galit Moss
 
-The app in this repo is deployed at [https://render-express-dreamt.onrender.com](https://express.onrender.com).
+[Access our app here](https://render-express-dreamt.onrender.com).
 
 ## What the project is?
 
