@@ -2,7 +2,8 @@
 ## By the dream team:
 ### Su Kayali, Robert Lam, James Preston & Galit Moss
 
-The app in this repo is deployed at [https://express.onrender.com](https://express.onrender.com).
+The app in this repo is deployed at [https://render-express-dreamt.onrender.com](https://express.onrender.com).
+
 ## What the project is?
 
 An app where bucket list travel and AI integration meet in the most uncomplicated way. 
@@ -19,6 +20,7 @@ Using AI technology can be really confusing to some, and hopefully with the ease
 ### Su:
 
 ### Robert:
+I had a great time working in a team. It was very interesting to navigate the project as a team - with project management tools like Trello where we could clearly break down the tasks required for the project. I focused on back-end development. It was a very good experience to learn the backend with routes and how to get the data from MongoDB. GitHub is a pain and I wish it was so much better, it was the bane of our existence as a team but we eventually solved it and got the project finished. I really enjoyed working in a team as there was always a live rubber duck if I needed help. Learning node was very insightful to see how things work together to build one big seamless app. Together we stand!
 
 ### James:
 
@@ -41,3 +43,6 @@ Render sucks. Making a lot of little mistakes really helps you learn.
 
 ## Future Features:
 Using Stripe API to make users pay so we can generate AI images. If they want more than 5 bucket list items it'll incur a fee.
+Search Function where users can search through all bucket list items.
+ChatGPT to have more functionality - searching for hotels and restaurants to give back to the user.
+Give the user a chance to add more key value pairs to add more detail to their bucket list item.
