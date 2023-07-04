@@ -31,15 +31,7 @@ function howTo(){
     itinerary.
 </p>
 <br/>
-<div class="home-page-div">
-<h2>Machu Pichu</h2>
-<p>Machu Picchu beckons with its awe-inspiring ruins and stunning mountain vistas, promising an unforgettable adventure that immerses you in the ancient Inca civilization's intriguing history and captivating beauty.</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Machu_Picchu%2C_Peru.jpg"></img>
-<div class="btn-div">
-<button class="btn-outline-dark btn">Delete</button>
-<button class="btn-outline-dark btn">Edit</button>
-<button id="machuItin" class="btn-outline-dark btn">Plan Itinerary</button>
-</div>
+<img src="https://i.ibb.co/xfwZvvx/Screenshot-2023-07-04-at-7-05-30-pm.png"></img>
 </div>
 <br/>
 <h4>Explore</h4>
