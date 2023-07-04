@@ -13,7 +13,7 @@ function addBucketListForm(email, username) {
 <label for="name" class="form-label mb-0">Destination:</label>
 <input type="text" name="name" class="form-control reflections mb-1">
 <label for="reflections" class="form-label mb-0">Reflections:</label>
-<input type="text" name="reflections" class="form-control reflections mb-1" placeholder="Why do you want to go here? Why is it special to you? Any interesting info! text">
+<input type="text" name="reflections" class="form-control reflections mb-1" placeholder="Why do you want to go here? Why is it special to you? Any interesting info!">
 <br><br>
 <input type="submit" class="btn btn-outline-dark">
 `;
