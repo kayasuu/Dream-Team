@@ -113,13 +113,18 @@ function renderList(bucketList) {
 }
 
 function renderEditForm(bucketList){
+
+  const container = document.createElement("div");
+  container.classList.add("d-flex", "justify-content-center", "align-items-center");
+  container.style.height = "40vh";  
+
   const form = document.createElement("form")
   form.innerHTML = `
   <label for="name" class="form-label mb-0">Name</label>
   <input type="text" name="name" class="form-control" value="${bucketList.name}">
   <label for="reflections" class="form-label mb-0">Reflections</label>
   <input type="text" class="form-control" name="reflections" value="${bucketList.reflections}">
-  <input type="submit">
+  <input type="submit" class="btn btn-outline-dark">
   `;
   form.addEventListener("submit", (event)=>{
   event.preventDefault()
@@ -136,8 +141,9 @@ function renderEditForm(bucketList){
     console.log(error)
   })
   })
+
   const page = document.getElementById("page")
-  page.classList.add('centre')
-  page.replaceChildren(form)
+  container.appendChild(form)
+  page.replaceChildren(container)
 };
 
