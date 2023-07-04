@@ -5,7 +5,7 @@ const axios = require('axios');
 async function getImages(source){
 
 const response = await axios.get(`https://api.unsplash.com/search/photos?query=${source}&orientation=landscape&client_id=&client_id=${unsplashApi}`)
-        const imageUrl = response.data.results[0].urls.small; 
+        const imageUrl = response.data.results[0].urls.full; 
         console.log(imageUrl);
         return imageUrl;
 }

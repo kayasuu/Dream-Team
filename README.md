@@ -18,6 +18,8 @@ Using AI technology can be really confusing to some, and hopefully with the ease
 
 ## Reflections from each of us:
 ### Su:
+Working in a team has been overall a great experience. Together, we achieved impressive results in a short amount of time that we couldn't have been able to accomplish on our own. While we faced some challenges with GitHub, specifically accidental merged commits, we persevered and resolved the issues, reinforcing our collaboration skills. Additionally, we encountered some challenges with Render along the way. However, these obstacles allowed us to grow and enhance our problem-solving abilities. Overall, this project provided us with an excellent opportunity to learn and master a new framework, further expanding our professional horizons.
+
 
 ### Robert:
 I had a great time working in a team. It was very interesting to navigate the project as a team - with project management tools like Trello where we could clearly break down the tasks required for the project. I focused on back-end development. It was a very good experience to learn the backend with routes and how to get the data from MongoDB. GitHub is a pain and I wish it was so much better, it was the bane of our existence as a team but we eventually solved it and got the project finished. I really enjoyed working in a team as there was always a live rubber duck if I needed help. Learning node was very insightful to see how things work together to build one big seamless app. Together we stand!
