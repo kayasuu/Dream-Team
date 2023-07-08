@@ -36,8 +36,6 @@ I really loved playing more with Bootstrap & CSS. Our app could definitely look 
 
 [Galit's Github](https://github.com/gal333t)
 
-## What does our App look like? Here's a few different examples!
-
 ## Did we give ourselves too much work?!
 Probably
 
