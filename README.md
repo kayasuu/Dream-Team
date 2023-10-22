@@ -2,7 +2,7 @@
 ## By the dream team:
 ### Su Kayali, Robert Lam, James Preston & Galit Moss
 
-[Access our app here](https://render-express-dreamt.onrender.com).
+[Access our app here](https://ai-experiences.onrender.com/).
 
 ## What the project is?
 
