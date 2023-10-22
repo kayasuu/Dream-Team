@@ -1,6 +1,6 @@
 # BUCKETLIST.AI
 ## By the dream team:
-### Su Kayali, Robert Lam, James Preston & Galit Moss
+### Su Evren, Robert Lam, James Preston & Galit Moss
 
 [Access our app here](https://ai-experiences.onrender.com/).
 
